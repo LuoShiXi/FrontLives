@@ -2,25 +2,29 @@
 <html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8">
-  <title>NVIDIA 登顶全球第一 · 2025 市值冲刺赛</title>
+  <meta charset="UTF-8" />
+  <title>排名变化</title>
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       background: #000000;
       color: #fff;
       font-family: "MiSans", "Microsoft YaHei", sans-serif;
-      overflow: hidden;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
-    h1 {
+    .chart-wrapper h1 {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 400;
-      margin: 20px 0;
+      margin: 0;
+      padding: 0;
       color: #fff;
+      flex-shrink: 0;
+      width: 100%;
     }
 
     .year-display {
@@ -28,7 +32,7 @@
       right: 50px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 8rem;
+      font-size: 10rem;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.15);
       z-index: 10;
@@ -40,7 +44,7 @@
     }
 
     .year-display.flip {
-      animation: flipPage 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+      animation: flipPage 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     @keyframes flipPage {
@@ -65,21 +69,21 @@
       }
     }
 
-    .countdown {
-      text-align: center;
-      font-size: 1rem;
-      color: #999;
-      margin: 5px 0;
+    .chart-wrapper .countdown {
+      display: none;
     }
 
     .controls {
-      text-align: center;
-      margin: 15px 0;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+      padding: 0 20px;
     }
 
     .controls button {
       padding: 8px 20px;
-      margin: 0 5px;
+      margin: 0;
       border: 1px solid #666;
       background: transparent;
       color: #fff;
@@ -88,25 +92,62 @@
     }
 
     .label {
-      font-size: 16px;
       fill: #fff;
     }
 
     .value {
-      font-size: 16px;
       fill: #fff;
     }
 
-    .chart {
+    .chart-wrapper .chart {
       width: 100%;
-      height: calc(100vh - 200px);
-      min-height: 500px;
+      flex: 1;
       position: relative;
+      overflow: visible;
+      min-height: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chart-container {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 80px);
+      box-sizing: border-box;
+      gap: 20px;
+    }
+
+    .chart-wrapper {
+      position: relative;
+      background: #0a0a0a;
+      border: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      /* 尽可能占满剩余空间，同时保持16:9比例 */
+      /* 计算可用空间：视口高度 - 顶部padding - 按钮高度 - 按钮间距 - 底部padding */
+      width: min(100%, calc((100vh - 160px) * 16 / 9));
+      /* 计算可用空间：视口宽度 - 左右padding */
+      height: min(calc((100vw - 40px) * 9 / 16), calc(100vh - 160px));
+      max-width: 100%;
+      max-height: 100%;
+      /* 内部内容边距 */
+      padding: 20px;
+      box-sizing: border-box;
+      gap: 10px;
     }
 
     .chart svg {
       width: 100%;
-      height: 100%;
+      display: block;
     }
 
     /* 配置表单样式 */
@@ -301,7 +342,7 @@
     }
 
     .btn-add {
-      background: #4a5568;
+      background: #3b82f6;
       border: 1px solid #666;
       color: #fff;
       padding: 8px 15px;
@@ -312,7 +353,7 @@
     }
 
     .btn-add:hover {
-      background: #5a6578;
+      background: #2563eb;
     }
 
     .btn-primary {
@@ -332,7 +373,7 @@
     }
 
     .btn-secondary {
-      background: #4a5568;
+      background: #3b82f6;
       border: 1px solid #666;
       color: #fff;
       padding: 10px 20px;
@@ -343,7 +384,7 @@
     }
 
     .btn-secondary:hover {
-      background: #5a6578;
+      background: #2563eb;
     }
 
     .special-item-tag {
@@ -375,7 +416,6 @@
 </head>
 
 <body>
-
   <button class="config-toggle" onclick="toggleConfig()">⚙️ 配置</button>
 
   <div class="config-panel" id="configPanel">
@@ -390,7 +430,7 @@
           <div class="config-section-title">基础信息</div>
           <div class="form-group">
             <label>标题</label>
-            <input type="text" id="configTitle" name="title" required>
+            <input type="text" id="configTitle" name="title" required />
           </div>
         </div>
 
@@ -398,7 +438,9 @@
         <div class="config-section">
           <div class="config-section-title">数据配置</div>
           <div id="keyframesContainer"></div>
-          <button type="button" class="btn-add" onclick="addKeyframe()">+ 添加时间点</button>
+          <button type="button" class="btn-add" onclick="addKeyframe()">
+            + 添加时间点
+          </button>
         </div>
 
         <!-- 颜色配置 -->
@@ -407,15 +449,15 @@
           <div class="form-row">
             <div class="form-group">
               <label>默认颜色</label>
-              <input type="color" id="colorDefault" name="colorDefault" value="#4a5568">
+              <input type="color" id="colorDefault" name="colorDefault" value="#3b82f6" />
             </div>
             <div class="form-group">
               <label>特殊标记颜色</label>
-              <input type="color" id="colorSpecial" name="colorSpecial" value="#e31937">
+              <input type="color" id="colorSpecial" name="colorSpecial" value="#e31937" />
             </div>
             <div class="form-group">
               <label>第一名颜色</label>
-              <input type="color" id="colorFirstPlace" name="colorFirstPlace" value="#76b900">
+              <input type="color" id="colorFirstPlace" name="colorFirstPlace" value="#76b900" />
             </div>
           </div>
         </div>
@@ -425,7 +467,7 @@
           <div class="config-section-title">特殊标记项</div>
           <div class="form-group">
             <label>特殊标记项名称（用逗号分隔）</label>
-            <input type="text" id="specialItems" name="specialItems" placeholder="例如：英伟达,苹果">
+            <input type="text" id="specialItems" name="specialItems" placeholder="例如：英伟达,苹果" />
           </div>
           <div id="specialItemsDisplay"></div>
         </div>
@@ -436,21 +478,21 @@
           <div class="form-row">
             <div class="form-group">
               <label>前缀</label>
-              <input type="text" id="valuePrefix" name="valuePrefix" placeholder="$">
+              <input type="text" id="valuePrefix" name="valuePrefix" placeholder="$" />
             </div>
             <div class="form-group">
               <label>后缀</label>
-              <input type="text" id="valueSuffix" name="valueSuffix" placeholder="T">
+              <input type="text" id="valueSuffix" name="valueSuffix" placeholder="T" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>小数位数</label>
-              <input type="number" id="valueDecimals" name="valueDecimals" min="0" max="10" value="1">
+              <input type="number" id="valueDecimals" name="valueDecimals" min="0" max="10" value="1" />
             </div>
             <div class="form-group">
               <label class="checkbox-group">
-                <input type="checkbox" id="valueUseCommas" name="valueUseCommas" checked>
+                <input type="checkbox" id="valueUseCommas" name="valueUseCommas" checked />
                 <span>使用千分位分隔符</span>
               </label>
             </div>
@@ -463,69 +505,63 @@
           <div class="form-row">
             <div class="form-group">
               <label>过渡帧数</label>
-              <input type="number" id="animSteps" name="animSteps" min="10" max="200" value="80">
+              <input type="number" id="animSteps" name="animSteps" min="10" max="200" value="80" />
             </div>
             <div class="form-group">
               <label>每帧时长（毫秒）</label>
-              <input type="number" id="animDuration" name="animDuration" min="1000" max="20000" value="5000">
+              <input type="number" id="animDuration" name="animDuration" min="1000" max="20000" value="5000" />
             </div>
           </div>
           <div class="form-group">
             <label>显示前N名</label>
-            <input type="number" id="animTopN" name="animTopN" min="1" max="20" value="10">
-          </div>
-        </div>
-
-        <!-- 图表配置 -->
-        <div class="config-section">
-          <div class="config-section-title">图表配置</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>柱状图高度</label>
-              <input type="number" id="chartBarHeight" name="chartBarHeight" min="30" max="100" value="60">
-            </div>
-            <div class="form-group">
-              <label>起始X位置</label>
-              <input type="number" id="chartBarStartX" name="chartBarStartX" min="100" max="500" value="200">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>最大值（留空自动计算）</label>
-            <input type="number" id="chartMaxValue" name="chartMaxValue" min="0" placeholder="留空自动计算">
+            <input type="number" id="animTopN" name="animTopN" min="1" max="20" value="10" />
           </div>
         </div>
 
         <!-- 操作按钮 -->
         <div class="config-section">
           <button type="submit" class="btn-primary">应用配置</button>
-          <div style="margin-top: 10px;">
-            <button type="button" class="btn-secondary" onclick="exportConfig()">导出JSON</button>
-            <button type="button" class="btn-secondary" onclick="loadConfig()">从文件加载</button>
-            <input type="file" id="configFileInput" accept=".json" style="display: none;"
-              onchange="handleFileLoad(event)">
+          <div style="margin-top: 10px">
+            <button type="button" class="btn-secondary" onclick="exportConfig()">
+              导出JSON
+            </button>
+            <button type="button" class="btn-secondary" onclick="loadConfig()">
+              从文件加载
+            </button>
+            <input type="file" id="configFileInput" accept=".json" style="display: none"
+              onchange="handleFileLoad(event)" />
           </div>
         </div>
       </form>
     </div>
   </div>
 
-  <h1 id="title">NVIDIA 市值登顶全球第一 · 2020-2025</h1>
-  <div class="countdown" id="countdown"></div>
-  <div class="controls">
-    <button onclick="play()">播放</button>
-    <button onclick="pause()">暂停</button>
-    <button onclick="restart()">重播</button>
+  <div class="chart-container">
+    <div class="controls">
+      <button onclick="play()">播放</button>
+      <button onclick="pause()">暂停</button>
+      <button onclick="restart()">重播</button>
+    </div>
+    <div class="chart-wrapper">
+      <h1 id="title">Top · 2020-2025</h1>
+      <div class="countdown" id="countdown"></div>
+      <div class="chart" id="chart">
+        <div class="year-display" id="yearDisplay">2020</div>
+      </div>
+    </div>
   </div>
-  <div class="chart" id="chart">
-    <div class="year-display" id="yearDisplay">2020</div>
-  </div>
-
 
   <script>
     // ==================== 配置说明 ====================
-    // 
-    // 配置使用内置默认值，可通过右上角的"配置"按钮打开配置表单进行可视化配置
-    // 配置完成后可以导出为JSON文件保存
+    //
+    // 配置从外部 config.json 文件加载，可通过右上角的"配置"按钮打开配置表单进行可视化配置
+    // 配置完成后可以导出为JSON文件保存，或直接修改 config.json 文件
+    //
+    // 注意：由于浏览器安全限制，需要通过 HTTP 服务器运行才能加载 JSON 文件
+    // 可以使用以下命令启动本地服务器：
+    //   Python 3: python -m http.server 8000
+    //   Node.js: npx serve
+    //   或使用 VS Code 的 Live Server 插件
     //
     // ==================== 配置说明 ====================
 
@@ -551,14 +587,14 @@
           title: '',
           keyframes: [],
           colors: {
-            default: '#4a5568',
+            default: '#3b82f6',
             special: '#e31937',
             firstPlace: '#76b900'
           },
           specialItems: [],
           valueFormat: {
             prefix: '$',
-            suffix: 'T',
+            suffix: 'B',
             decimals: 1,
             useCommas: true
           },
@@ -567,11 +603,6 @@
             durationPerKeyframe: 5000,
             topN: 10
           },
-          chart: {
-            maxValue: null,
-            barHeight: 60,
-            barStartX: 200
-          }
         };
       }
 
@@ -580,7 +611,7 @@
 
       // 颜色配置
       if (CONFIG.colors) {
-        document.getElementById('colorDefault').value = CONFIG.colors.default || '#4a5568';
+        document.getElementById('colorDefault').value = CONFIG.colors.default || '#3b82f6';
         document.getElementById('colorSpecial').value = CONFIG.colors.special || '#e31937';
         document.getElementById('colorFirstPlace').value = CONFIG.colors.firstPlace || '#76b900';
       }
@@ -606,13 +637,6 @@
         document.getElementById('animTopN').value = CONFIG.animation.topN || 10;
       }
 
-      // 图表配置
-      if (CONFIG.chart) {
-        document.getElementById('chartBarHeight').value = CONFIG.chart.barHeight || 60;
-        document.getElementById('chartBarStartX').value = CONFIG.chart.barStartX || 200;
-        document.getElementById('chartMaxValue').value = CONFIG.chart.maxValue || '';
-      }
-
       // 数据配置
       renderKeyframes();
     }
@@ -635,17 +659,17 @@
         const keyframeDiv = document.createElement('div');
         keyframeDiv.className = 'keyframe-item';
         keyframeDiv.innerHTML = `
-          <div class="keyframe-header">
-            <div class="keyframe-title">时间点 ${index + 1}</div>
-            <button type="button" class="keyframe-remove" onclick="removeKeyframe(${index})">删除</button>
-          </div>
-          <div class="form-group">
-            <label>日期/标签</label>
-            <input type="text" class="keyframe-date" value="${(frame.date || '').replace(/"/g, '&quot;')}" onchange="updateKeyframeDate(${index}, this.value)">
-          </div>
-          <div id="keyframe-data-${index}"></div>
-          <button type="button" class="btn-add" onclick="addDataItem(${index})">+ 添加数据项</button>
-        `;
+                <div class="keyframe-header">
+                  <div class="keyframe-title">时间点 ${index + 1}</div>
+                  <button type="button" class="keyframe-remove" onclick="removeKeyframe(${index})">删除</button>
+                </div>
+                <div class="form-group">
+                  <label>日期/标签</label>
+                  <input type="text" class="keyframe-date" value="${(frame.date || '').replace(/"/g, '&quot;')}" onchange="updateKeyframeDate(${index}, this.value)">
+                </div>
+                <div id="keyframe-data-${index}"></div>
+                <button type="button" class="btn-add" onclick="addDataItem(${index})">+ 添加数据项</button>
+              `;
         container.appendChild(keyframeDiv);
 
         // 渲染数据项
@@ -692,10 +716,10 @@
       dataDiv.className = 'data-item';
       const safeName = (name || '').replace(/"/g, '&quot;');
       dataDiv.innerHTML = `
-        <input type="text" placeholder="名称" value="${safeName}" onchange="updateDataItem(${keyframeIndex}, ${itemIndex}, 'name', this.value)">
-        <input type="number" placeholder="数值" value="${value || 0}" step="0.1" onchange="updateDataItem(${keyframeIndex}, ${itemIndex}, 'value', this.value)">
-        <button type="button" class="data-item-remove" onclick="removeDataItem(${keyframeIndex}, ${itemIndex})">删除</button>
-      `;
+              <input type="text" placeholder="名称" value="${safeName}" onchange="updateDataItem(${keyframeIndex}, ${itemIndex}, 'name', this.value)">
+              <input type="number" placeholder="数值" value="${value || 0}" step="0.1" onchange="updateDataItem(${keyframeIndex}, ${itemIndex}, 'value', this.value)">
+              <button type="button" class="data-item-remove" onclick="removeDataItem(${keyframeIndex}, ${itemIndex})">删除</button>
+            `;
       container.appendChild(dataDiv);
     }
 
@@ -737,11 +761,11 @@
       const display = document.getElementById('specialItemsDisplay');
       const items = input.value.split(',').map(s => s.trim()).filter(s => s);
       display.innerHTML = items.map((item, index) => `
-        <span class="special-item-tag">
-          ${item}
-          <span class="remove" onclick="removeSpecialItem(${index})">×</span>
-        </span>
-      `).join('');
+              <span class="special-item-tag">
+                ${item}
+                <span class="remove" onclick="removeSpecialItem(${index})">×</span>
+              </span>
+            `).join('');
     }
 
     // 移除特殊标记项
@@ -823,11 +847,6 @@
           interpolationSteps: parseInt(document.getElementById('animSteps').value) || 80,
           durationPerKeyframe: parseInt(document.getElementById('animDuration').value) || 5000,
           topN: parseInt(document.getElementById('animTopN').value) || 10
-        },
-        chart: {
-          maxValue: document.getElementById('chartMaxValue').value ? parseFloat(document.getElementById('chartMaxValue').value) : null,
-          barHeight: parseInt(document.getElementById('chartBarHeight').value) || 60,
-          barStartX: parseInt(document.getElementById('chartBarStartX').value) || 200
         }
       };
 
@@ -847,6 +866,17 @@
       // 清空图表
       const chartElement = document.getElementById('chart');
       chartElement.innerHTML = '';
+      
+      // 重新创建年份显示元素
+      const yearDisplayDiv = document.createElement('div');
+      yearDisplayDiv.className = 'year-display';
+      yearDisplayDiv.id = 'yearDisplay';
+      if (keyframes.length > 0) {
+        yearDisplayDiv.textContent = keyframes[0].date;
+      } else {
+        yearDisplayDiv.textContent = '2020';
+      }
+      chartElement.appendChild(yearDisplayDiv);
 
       // 更新标题
       if (CONFIG.title) {
@@ -899,152 +929,138 @@
       reader.readAsText(file);
     }
 
-    // 获取默认配置
-    function getDefaultConfig() {
-      return {
-        title: "NVIDIA 市值登顶全球第一 · 2020-2025",
-        keyframes: [
-          {
-            date: "2020",
-            data: [
-              { name: "苹果", value: 2250 },
-              { name: "微软", value: 2100 },
-              { name: "亚马逊", value: 1600 },
-              { name: "谷歌", value: 1450 },
-              { name: "腾讯", value: 680 },
-              { name: "Meta", value: 840 },
-              { name: "特斯拉", value: 700 },
-              { name: "英伟达", value: 320 },
-              { name: "字节跳动", value: 400 }
-            ]
-          },
-          {
-            date: "2021",
-            data: [
-              { name: "苹果", value: 2900 },
-              { name: "微软", value: 2600 },
-              { name: "亚马逊", value: 1700 },
-              { name: "谷歌", value: 1900 },
-              { name: "特斯拉", value: 1100 },
-              { name: "Meta", value: 950 },
-              { name: "英伟达", value: 580 },
-              { name: "腾讯", value: 600 },
-              { name: "字节跳动", value: 500 }
-            ]
-          },
-          {
-            date: "2022",
-            data: [
-              { name: "苹果", value: 2600 },
-              { name: "微软", value: 2400 },
-              { name: "谷歌", value: 1800 },
-              { name: "亚马逊", value: 1400 },
-              { name: "特斯拉", value: 800 },
-              { name: "英伟达", value: 750 },
-              { name: "Meta", value: 600 },
-              { name: "腾讯", value: 450 },
-              { name: "字节跳动", value: 600 }
-            ]
-          },
-          {
-            date: "2023",
-            data: [
-              { name: "苹果", value: 3000 },
-              { name: "微软", value: 3100 },
-              { name: "英伟达", value: 2200 },
-              { name: "谷歌", value: 2000 },
-              { name: "亚马逊", value: 1800 },
-              { name: "Meta", value: 1200 },
-              { name: "特斯拉", value: 900 },
-              { name: "腾讯", value: 550 },
-              { name: "字节跳动", value: 800 }
-            ]
-          },
-          {
-            date: "2024",
-            data: [
-              { name: "微软", value: 3400 },
-              { name: "苹果", value: 3300 },
-              { name: "英伟达", value: 3200 },
-              { name: "谷歌", value: 2300 },
-              { name: "亚马逊", value: 2100 },
-              { name: "Meta", value: 1600 },
-              { name: "特斯拉", value: 1100 },
-              { name: "字节跳动", value: 900 },
-              { name: "腾讯", value: 500 }
-            ]
-          },
-          {
-            date: "2025 Q3",
-            data: [
-              { name: "英伟达", value: 3800 },
-              { name: "微软", value: 3600 },
-              { name: "苹果", value: 3500 },
-              { name: "谷歌", value: 2500 },
-              { name: "亚马逊", value: 2300 },
-              { name: "Meta", value: 1900 },
-              { name: "字节跳动", value: 1400 },
-              { name: "特斯拉", value: 1300 },
-              { name: "腾讯", value: 400 }
-            ]
-          }
-        ],
-        colors: {
-          default: "#4a5568",
-          special: "#e31937",
-          firstPlace: "#76b900"
-        },
-        specialItems: ["英伟达"],
-        valueFormat: {
-          prefix: "$",
-          suffix: "T",
-          decimals: 1,
-          useCommas: true
-        },
-        animation: {
-          interpolationSteps: 80,
-          durationPerKeyframe: 5000,
-          topN: 10
-        },
-        chart: {
-          maxValue: null,
-          barHeight: 60,
-          barStartX: 200
+    // 从外部文件加载配置
+    async function loadConfigFromFile(configPath = 'config.json') {
+      try {
+        const response = await fetch(configPath);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-      };
+        const config = await response.json();
+        
+        // 验证配置格式
+        if (!config.keyframes || !Array.isArray(config.keyframes)) {
+          throw new Error('配置文件格式错误：缺少 keyframes 数组');
+        }
+        
+        return config;
+      } catch (error) {
+        console.error('加载配置文件失败:', error);
+        
+        // 检查是否是 CORS 错误（通常发生在直接打开文件时）
+        const isCorsError = error.message.includes('Failed to fetch') || 
+                          error.message.includes('CORS') ||
+                          window.location.protocol === 'file:';
+        
+        if (isCorsError) {
+          throw new Error('CORS_ERROR');
+        }
+        
+        throw error;
+      }
     }
 
     // 加载配置并初始化图表
-    function initChart() {
-      // 使用默认配置
-      CONFIG = getDefaultConfig();
+    async function initChart() {
+      // 显示加载提示
+      const chartElement = document.getElementById("chart");
+      chartElement.innerHTML = `
+        <div style="text-align: center; padding: 50px; color: #fff;">
+          <h2>正在加载配置...</h2>
+          <p>请稍候</p>
+        </div>
+      `;
 
-      // 提取keyframes数据
-      keyframes = CONFIG.keyframes || [];
+      try {
+        // 从外部文件加载配置
+        CONFIG = await loadConfigFromFile('config.json');
 
-      // 如果没有数据，显示提示信息
-      if (keyframes.length === 0) {
-        document.getElementById("chart").innerHTML =
-          `<div style="text-align: center; padding: 50px; color: #fff;">
-            <h2>暂无数据</h2>
-            <p>请点击右上角"配置"按钮添加数据</p>
-          </div>`;
-        return;
+        // 提取keyframes数据
+        keyframes = CONFIG.keyframes || [];
+
+        // 如果没有数据，显示提示信息
+        if (keyframes.length === 0) {
+          chartElement.innerHTML = `
+            <div style="text-align: center; padding: 50px; color: #fff;">
+              <h2>⚠️ 暂无数据</h2>
+              <p>请检查 config.json 文件或点击右上角"配置"按钮添加数据</p>
+            </div>
+          `;
+          return;
+        }
+
+        // 更新标题
+        if (CONFIG.title) {
+          document.getElementById("title").textContent = CONFIG.title;
+          document.title = CONFIG.title;
+        }
+
+        // 初始化图表
+        initializeChart();
+        chartInitialized = true;
+      } catch (error) {
+        // 处理加载错误
+        let errorMessage = '加载配置文件失败';
+        let errorDetails = error.message;
+        
+        if (error.message === 'CORS_ERROR') {
+          errorMessage = '⚠️ 需要启动 HTTP 服务器';
+          errorDetails = `
+            <p style="margin: 20px 0; line-height: 1.8;">
+              由于浏览器安全限制，直接打开 HTML 文件无法加载 JSON 配置文件。<br>
+              请通过 HTTP 服务器运行：
+            </p>
+            <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; text-align: left; max-width: 600px; margin: 0 auto;">
+              <p style="margin: 10px 0;"><strong>方式一：Python</strong></p>
+              <code style="background: #000; padding: 8px 12px; border-radius: 4px; display: block; margin: 10px 0;">
+                cd h5<br>
+                python -m http.server 8000
+              </code>
+              <p style="margin: 20px 0 10px 0;"><strong>方式二：Node.js</strong></p>
+              <code style="background: #000; padding: 8px 12px; border-radius: 4px; display: block; margin: 10px 0;">
+                cd h5<br>
+                npx serve
+              </code>
+              <p style="margin: 20px 0 10px 0;"><strong>方式三：使用启动脚本</strong></p>
+              <code style="background: #000; padding: 8px 12px; border-radius: 4px; display: block; margin: 10px 0;">
+                ./start-server.sh  (Mac/Linux)<br>
+                start-server.bat   (Windows)
+              </code>
+            </div>
+            <p style="margin-top: 20px; color: #999; font-size: 12px;">
+              启动服务器后，在浏览器中访问 http://localhost:8000/D3-zhuzhuangtu.html
+            </p>
+          `;
+        } else {
+          errorDetails = `<p style="color: #e31937;">${error.message}</p>`;
+        }
+        
+        chartElement.innerHTML = `
+          <div style="text-align: center; padding: 50px; color: #fff;">
+            <h2>${errorMessage}</h2>
+            ${errorDetails}
+          </div>
+        `;
       }
-
-      // 更新标题
-      if (CONFIG.title) {
-        document.getElementById("title").textContent = CONFIG.title;
-        document.title = CONFIG.title;
-      }
-
-      // 初始化图表
-      initializeChart();
-      chartInitialized = true;
     }
 
     // 初始化图表
     function initializeChart() {
+      // 清空 chart 容器，移除加载提示等临时内容
+      const chartElement = document.getElementById("chart");
+      chartElement.innerHTML = '';
+      
+      // 重新创建年份显示元素（如果之前被清空了）
+      const yearDisplayDiv = document.createElement('div');
+      yearDisplayDiv.className = 'year-display';
+      yearDisplayDiv.id = 'yearDisplay';
+      if (keyframes.length > 0) {
+        yearDisplayDiv.textContent = keyframes[0].date;
+      } else {
+        yearDisplayDiv.textContent = '2020';
+      }
+      chartElement.appendChild(yearDisplayDiv);
+      
       const allNamesSet = new Set(keyframes.flatMap(k => k.data.map(d => d.name)));
       const allNames = Array.from(allNamesSet); // 直接转换为数组
       keyframes.forEach(k => {
@@ -1084,9 +1100,25 @@
       const totalDuration = CONFIG.animation.durationPerKeyframe;
       const frameInterval = totalDuration / CONFIG.animation.interpolationSteps;
 
-      const width = Math.max(800, window.innerWidth - 80);
-      const height = Math.max(600, window.innerHeight - 180);
-      const barHeight = CONFIG.chart.barHeight;
+      // 获取chart容器的实际尺寸
+      const chartRect = chartElement.getBoundingClientRect();
+      const width = chartRect.width || Math.max(800, window.innerWidth - 80);
+      const height = chartRect.height || 600;
+      
+      // 根据容器高度自适应计算柱状图高度和字体大小
+      const topN = CONFIG.animation.topN;
+      const availableHeight = height - 40; // 预留顶部和底部空间（减少间距以居中）
+      const barHeight = Math.max(30, Math.floor(availableHeight / topN)); // 自适应柱状图高度
+      
+      // 计算垂直居中偏移量
+      const totalBarsHeight = topN * barHeight;
+      const verticalCenterOffset = (height - totalBarsHeight) / 2;
+      
+      // 根据容器尺寸自适应计算字体大小（基于容器宽度的比例）
+      const baseFontSize = Math.max(12, Math.min(20, width / 50)); // 字体大小在12-20px之间自适应
+      const labelFontSize = baseFontSize;
+      const valueFontSize = baseFontSize;
+      
       let timer = null, currentFrameIndex = 0;
       let isPlaying = false;
 
@@ -1096,19 +1128,72 @@
       const svg = d3.select("#chart").append("svg")
         .attr("width", width)
         .attr("height", height)
-        .style("display", "block");
+        .style("display", "block")
+        .style("margin", "0 auto")
+        .style("position", "relative");
 
-      // 柱状图起始位置（为标签留出空间）
-      const barStartX = CONFIG.chart.barStartX;
-      const maxBarWidth = width - barStartX - 200; // 为右侧数值留出空间
+      // 格式化数值显示（需要在calculateMaxWidths之前定义）
+      function formatValue(value) {
+        const format = CONFIG.valueFormat.useCommas
+          ? d3.format(`,.${CONFIG.valueFormat.decimals}f`)
+          : d3.format(`.${CONFIG.valueFormat.decimals}f`);
+        return `${CONFIG.valueFormat.prefix}${format(value)}${CONFIG.valueFormat.suffix}`;
+      }
 
-      // 计算数值范围
-      const maxValue = CONFIG.chart.maxValue ||
-        Math.max(...keyframes.flatMap(k => k.data.map(d => d.value))) * 1.1;
+      // 创建一个临时文本元素用于测量文字宽度（不占据空间）
+      const tempText = svg.append("text")
+        .attr("class", "temp-measure")
+        .style("visibility", "hidden")
+        .style("position", "absolute")
+        .style("opacity", "0")
+        .style("pointer-events", "none")
+        .attr("x", -9999)
+        .attr("y", -9999)
+        .style("font-size", labelFontSize);
+
+      // 计算所有数据中标签和数值的最大宽度
+      function calculateMaxWidths(data) {
+        let maxLabelWidth = 0;
+        let maxValueWidth = 0;
+        
+        data.forEach(d => {
+          // 测量标签宽度
+          tempText.text(d.name).attr("font-size", labelFontSize);
+          const labelWidth = tempText.node().getBBox().width;
+          maxLabelWidth = Math.max(maxLabelWidth, labelWidth);
+          
+          // 测量数值宽度
+          tempText.text(formatValue(d.value)).attr("font-size", valueFontSize);
+          const valueWidth = tempText.node().getBBox().width;
+          maxValueWidth = Math.max(maxValueWidth, valueWidth);
+        });
+        
+        return { maxLabelWidth, maxValueWidth };
+      }
+
+      // 计算数值范围（自适应）
+      const maxValue = Math.max(...keyframes.flatMap(k => k.data.map(d => d.value))) * 1.1;
+
+      // 获取所有数据用于计算布局
+      const allData = keyframes.flatMap(k => k.data);
+      const { maxLabelWidth, maxValueWidth } = calculateMaxWidths(allData);
+      
+      // 动态计算边距和柱状图区域
+      const labelPadding = 20; // 标签右侧留白
+      const valuePadding = 20; // 数值左侧留白
+      const barStartX = maxLabelWidth + labelPadding;
+      const barEndX = width - maxValueWidth - valuePadding;
+      const maxBarWidth = Math.max(100, barEndX - barStartX);
+      
+      // 让柱状图区域居中显示
+      const totalContentWidth = maxLabelWidth + labelPadding + maxBarWidth + valuePadding + maxValueWidth;
+      const centerOffset = (width - totalContentWidth) / 2;
+      const adjustedBarStartX = centerOffset + maxLabelWidth + labelPadding;
+      const adjustedBarEndX = centerOffset + maxLabelWidth + labelPadding + maxBarWidth;
 
       const xScale = d3.scaleLinear()
         .domain([0, maxValue])
-        .range([0, Math.max(100, maxBarWidth)]);
+        .range([0, maxBarWidth]);
 
       // 获取柱状图颜色的函数
       function getBarColor(name, rank) {
@@ -1119,14 +1204,6 @@
         } else {
           return CONFIG.colors.default; // 其他显示默认颜色
         }
-      }
-
-      // 格式化数值显示
-      function formatValue(value) {
-        const format = CONFIG.valueFormat.useCommas
-          ? d3.format(`,.${CONFIG.valueFormat.decimals}f`)
-          : d3.format(`.${CONFIG.valueFormat.decimals}f`);
-        return `${CONFIG.valueFormat.prefix}${format(value)}${CONFIG.valueFormat.suffix}`;
       }
 
       function update(data, date, prev, isSmooth = true) {
@@ -1142,14 +1219,14 @@
         const enter = bars.enter().append("g").attr("class", "bar-group")
           .attr("transform", d => {
             const rank = rankMap.get(d.name);
-            return `translate(0,${(rank !== undefined ? rank : 10) * barHeight + 80})`;
+            return `translate(0,${(rank !== undefined ? rank : 10) * barHeight + verticalCenterOffset})`;
           });
 
         enter.append("rect")
           .attr("class", d => `bar ${d.name}`)
           .attr("height", barHeight - 12)
           .attr("rx", 0)
-          .attr("x", barStartX)
+          .attr("x", adjustedBarStartX)
           .attr("y", 0)
           .attr("width", d => Math.max(0, xScale(Math.max(0, d.value))))
           .attr("fill", (d) => {
@@ -1159,15 +1236,18 @@
 
         enter.append("text")
           .attr("class", "label")
-          .attr("x", 50)
+          .attr("x", adjustedBarStartX - labelPadding)
           .attr("y", barHeight / 2)
           .attr("dy", ".35em")
+          .attr("text-anchor", "end")
+          .attr("font-size", labelFontSize)
           .text(d => d.name);
         enter.append("text")
           .attr("class", "value")
           .attr("y", barHeight / 2)
           .attr("dy", ".35em")
-          .attr("x", d => barStartX + Math.max(0, xScale(Math.max(0, d.value))) + 10)
+          .attr("x", d => adjustedBarStartX + Math.max(0, xScale(Math.max(0, d.value))) + valuePadding)
+          .attr("font-size", valueFontSize)
           .text(d => formatValue(d.value));
 
         const merged = enter.merge(bars);
@@ -1176,11 +1256,11 @@
         if (isSmooth && prev.size > 0) {
           // 使用最平滑的缓动函数 d3.easeSinInOut
           merged.transition().duration(duration).ease(d3.easeSinInOut)
-            .attr("transform", d => `translate(0,${rankMap.get(d.name) * barHeight + 80})`);
+            .attr("transform", d => `translate(0,${rankMap.get(d.name) * barHeight + verticalCenterOffset})`);
 
           merged.select("rect")
             .transition().duration(duration).ease(d3.easeSinInOut)
-            .attr("x", barStartX)
+            .attr("x", adjustedBarStartX)
             .attr("width", d => Math.max(0, xScale(Math.max(0, d.value))))
             .attr("fill", (d) => {
               const rank = rankMap.get(d.name);
@@ -1189,7 +1269,8 @@
 
           merged.select(".value")
             .transition().duration(duration * 1.5).ease(d3.easeSinInOut) // 使用最平滑的缓动函数
-            .attr("x", d => barStartX + Math.max(0, xScale(Math.max(0, d.value))) + 10)
+            .attr("x", d => adjustedBarStartX + Math.max(0, xScale(Math.max(0, d.value))) + valuePadding)
+            .attr("font-size", valueFontSize)
             .tween("text", function (d) {
               const prevVal = prev.get(d.name)?.value || d.value;
               const i = d3.interpolateNumber(prevVal, d.value);
@@ -1203,18 +1284,22 @@
           // 初始渲染或非平滑更新，直接设置值
           merged.attr("transform", d => `translate(0,${rankMap.get(d.name) * barHeight + 80})`);
           merged.select("rect")
-            .attr("x", barStartX)
+            .attr("x", adjustedBarStartX)
             .attr("width", d => Math.max(0, xScale(Math.max(0, d.value))))
             .attr("fill", (d) => {
               const rank = rankMap.get(d.name);
               return getBarColor(d.name, rank);
             });
           merged.select(".value")
-            .attr("x", d => barStartX + Math.max(0, xScale(Math.max(0, d.value))) + 10)
+            .attr("x", d => adjustedBarStartX + Math.max(0, xScale(Math.max(0, d.value))) + valuePadding)
+            .attr("font-size", valueFontSize)
             .text(d => formatValue(d.value));
         }
 
-        merged.select(".label").text(d => d.name);
+        merged.select(".label")
+          .attr("x", adjustedBarStartX - labelPadding)
+          .attr("font-size", labelFontSize)
+          .text(d => d.name);
 
         bars.exit().transition().duration(300).ease(d3.easeLinear).attr("transform", `translate(${width},0)`).remove();
       }
@@ -1267,7 +1352,8 @@
           lastYear = year;
         }
 
-        d3.select("#countdown").text(`距离下一阶段: ${timeLeft.toFixed(1)}秒`);
+        // 倒计时已隐藏
+        // d3.select("#countdown").text(`距离下一阶段: ${timeLeft.toFixed(1)}秒`);
       }
 
       // 初始化lastYear
@@ -1290,8 +1376,15 @@
 
           // 使用更平滑的更新逻辑，允许部分帧更新
           if (elapsed >= frameInterval) {
+            // 检查是否到达最后一帧
+            if (currentFrameIndex >= allFrames.length - 1) {
+              // 到达最后一帧，停止播放
+              pause();
+              return;
+            }
+
             const prevFrame = allFrames[currentFrameIndex];
-            currentFrameIndex = (currentFrameIndex + 1) % allFrames.length;
+            currentFrameIndex = currentFrameIndex + 1;
             const currentFrame = allFrames[currentFrameIndex];
 
             const prevData = new Map(prevFrame.data.map(d => [d.name, d]));

@@ -1,0 +1,111 @@
+{
+  "title": "Top · 2020-2025",
+  "keyframes": [
+    {
+      "date": "2020",
+      "data": [
+        { "name": "苹果", "value": 2250 },
+        { "name": "微软", "value": 2100 },
+        { "name": "亚马逊", "value": 1600 },
+        { "name": "谷歌", "value": 1450 },
+        { "name": "腾讯", "value": 680 },
+        { "name": "Meta", "value": 840 },
+        { "name": "特斯拉", "value": 700 },
+        { "name": "英伟达", "value": 320 },
+        { "name": "字节跳动", "value": 400 }
+      ]
+    },
+    {
+      "date": "2021",
+      "data": [
+        { "name": "苹果", "value": 2900 },
+        { "name": "微软", "value": 2600 },
+        { "name": "亚马逊", "value": 1700 },
+        { "name": "谷歌", "value": 1900 },
+        { "name": "特斯拉", "value": 1100 },
+        { "name": "Meta", "value": 950 },
+        { "name": "英伟达", "value": 580 },
+        { "name": "腾讯", "value": 600 },
+        { "name": "字节跳动", "value": 500 }
+      ]
+    },
+    {
+      "date": "2022",
+      "data": [
+        { "name": "苹果", "value": 2600 },
+        { "name": "微软", "value": 2400 },
+        { "name": "谷歌", "value": 1800 },
+        { "name": "亚马逊", "value": 1400 },
+        { "name": "特斯拉", "value": 800 },
+        { "name": "英伟达", "value": 750 },
+        { "name": "Meta", "value": 600 },
+        { "name": "腾讯", "value": 450 },
+        { "name": "字节跳动", "value": 600 }
+      ]
+    },
+    {
+      "date": "2023",
+      "data": [
+        { "name": "苹果", "value": 3000 },
+        { "name": "微软", "value": 3100 },
+        { "name": "英伟达", "value": 2200 },
+        { "name": "谷歌", "value": 2000 },
+        { "name": "亚马逊", "value": 1800 },
+        { "name": "Meta", "value": 1200 },
+        { "name": "特斯拉", "value": 900 },
+        { "name": "腾讯", "value": 550 },
+        { "name": "字节跳动", "value": 800 }
+      ]
+    },
+    {
+      "date": "2024",
+      "data": [
+        { "name": "微软", "value": 3400 },
+        { "name": "苹果", "value": 3300 },
+        { "name": "英伟达", "value": 3200 },
+        { "name": "谷歌", "value": 2300 },
+        { "name": "亚马逊", "value": 2100 },
+        { "name": "Meta", "value": 1600 },
+        { "name": "特斯拉", "value": 1100 },
+        { "name": "字节跳动", "value": 900 },
+        { "name": "腾讯", "value": 500 }
+      ]
+    },
+    {
+      "date": "2025 Q3",
+      "data": [
+        { "name": "英伟达", "value": 3800 },
+        { "name": "微软", "value": 3600 },
+        { "name": "苹果", "value": 3500 },
+        { "name": "谷歌", "value": 2500 },
+        { "name": "亚马逊", "value": 2300 },
+        { "name": "Meta", "value": 1900 },
+        { "name": "字节跳动", "value": 1400 },
+        { "name": "特斯拉", "value": 1300 },
+        { "name": "腾讯", "value": 400 }
+      ]
+    }
+  ],
+  "colors": {
+    "default": "#3b82f6",
+    "special": "#e31937",
+    "firstPlace": "#76b900"
+  },
+  "specialItems": ["英伟达"],
+  "valueFormat": {
+    "prefix": "$",
+    "suffix": "B",
+    "decimals": 1,
+    "useCommas": true
+  },
+  "animation": {
+    "interpolationSteps": 80,
+    "durationPerKeyframe": 5000,
+    "topN": 10
+  },
+  "chart": {
+    "maxValue": null,
+    "barHeight": 60,
+    "barStartX": 200
+  }
+}
