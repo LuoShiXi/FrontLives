@@ -2,334 +2,1150 @@
   "title": "Top · 2015-2025",
   "keyframes": [
     {
-        "date": "2015",
-        "data": [
-          { "name": "苹果", "value": 596 },
-          { "name": "谷歌", "value": 531 },
-          { "name": "微软", "value": 447 },
-          { "name": "埃克森美孚", "value": 376 },
-          { "name": "伯克希尔哈撒韦", "value": 324 },
-          { "name": "亚马逊", "value": 323 },
-          { "name": "中国石油", "value": 330 },
-          { "name": "中国建设银行", "value": 299 },
-          { "name": "通用电气", "value": 314 },
-          { "name": "强生", "value": 287 },
-          { "name": "富国银行", "value": 282 },
-          { "name": "中国工商银行", "value": 275 },
-          { "name": "诺华", "value": 268 },
-          { "name": "沃尔玛", "value": 248 },
-          { "name": "摩根大通", "value": 245 },
-          { "name": "中国移动", "value": 243 },
-          { "name": "雀巢", "value": 233 },
-          { "name": "中国农业银行", "value": 200 },
-          { "name": "中国银行", "value": 180 },
-          { "name": "通用汽车", "value": 170 }
-        ]
-      },
-      {
-        "date": "2016",
-        "data": [
-          { "name": "苹果", "value": 607 },
-          { "name": "谷歌（Alphabet）", "value": 569 },
-          { "name": "微软", "value": 507 },
-          { "name": "伯克希尔哈撒韦", "value": 396 },
-          { "name": "亚马逊", "value": 380 },
-          { "name": "脸书（Meta）", "value": 359 },
-          { "name": "埃克森美孚", "value": 347 },
-          { "name": "强生", "value": 319 },
-          { "name": "摩根大通", "value": 315 },
-          { "name": "通用电气", "value": 282 },
-          { "name": "中国工商银行", "value": 261 },
-          { "name": "富国银行", "value": 256 },
-          { "name": "沃尔玛", "value": 248 },
-          { "name": "中国建设银行", "value": 229 },
-          { "name": "中国农业银行", "value": 188 },
-          { "name": "雀巢", "value": 236 },
-          { "name": "甲骨文", "value": 208 },
-          { "name": "可口可乐", "value": 195 },
-          { "name": "辉瑞", "value": 194 },
-          { "name": "威瑞森（Verizon）", "value": 193 }
-        ]
-      },
-      {
-        "date": "2017",
-        "data": [
-          { "name": "苹果", "value": 869 },
-          { "name": "谷歌（Alphabet）", "value": 735 },
-          { "name": "微软", "value": 659 },
-          { "name": "亚马逊", "value": 587 },
-          { "name": "脸书（Meta）", "value": 512 },
-          { "name": "伯克希尔哈撒韦", "value": 492 },
-          { "name": "阿里巴巴", "value": 471 },
-          { "name": "腾讯控股", "value": 441 },
-          { "name": "摩根大通", "value": 388 },
-          { "name": "强生", "value": 376 },
-          { "name": "埃克森美孚", "value": 359 },
-          { "name": "中国工商银行", "value": 311 },
-          { "name": "富国银行", "value": 310 },
-          { "name": "沃尔玛", "value": 294 },
-          { "name": "中国建设银行", "value": 261 },
-          { "name": "雀巢", "value": 259 },
-          { "name": "Visa", "value": 250 },
-          { "name": "宝洁", "value": 241 },
-          { "name": "中国农业银行", "value": 214 },
-          { "name": "AT&T", "value": 210 }
-        ]
-      },
-      {
-        "date": "2018",
-        "data": [
-          { "name": "苹果", "value": 877 },
-          { "name": "亚马逊", "value": 821 },
-          { "name": "微软", "value": 780 },
-          { "name": "谷歌（Alphabet）", "value": 763 },
-          { "name": "伯克希尔哈撒韦", "value": 495 },
-          { "name": "脸书（Meta）", "value": 474 },
-          { "name": "阿里巴巴", "value": 435 },
-          { "name": "腾讯控股", "value": 426 },
-          { "name": "摩根大通", "value": 368 },
-          { "name": "强生", "value": 361 },
-          { "name": "埃克森美孚", "value": 343 },
-          { "name": "沃尔玛", "value": 308 },
-          { "name": "中国工商银行", "value": 305 },
-          { "name": "Visa", "value": 297 },
-          { "name": "雀巢", "value": 282 },
-          { "name": "宝洁", "value": 271 },
-          { "name": "万事达卡", "value": 259 },
-          { "name": "中国建设银行", "value": 256 },
-          { "name": "富国银行", "value": 247 },
-          { "name": "英特尔", "value": 239 }
-        ]
-      },
-      {
-        "date": "2019",
-        "data": [
-          { "name": "微软", "value": 1204 },
-          { "name": "苹果", "value": 1192 },
-          { "name": "亚马逊", "value": 916 },
-          { "name": "谷歌（Alphabet）", "value": 915 },
-          { "name": "脸书（Meta）", "value": 585 },
-          { "name": "阿里巴巴", "value": 573 },
-          { "name": "伯克希尔哈撒韦", "value": 561 },
-          { "name": "腾讯控股", "value": 482 },
-          { "name": "摩根大通", "value": 425 },
-          { "name": "Visa", "value": 398 },
-          { "name": "强生", "value": 384 },
-          { "name": "沃尔玛", "value": 370 },
-          { "name": "雀巢", "value": 339 },
-          { "name": "宝洁", "value": 322 },
-          { "name": "万事达卡", "value": 315 },
-          { "name": "中国工商银行", "value": 305 },
-          { "name": "英特尔", "value": 289 },
-          { "name": "AT&T", "value": 282 },
-          { "name": "埃克森美孚", "value": 280 },
-          { "name": "三星电子", "value": 278 }
-        ]
-      },
-      {
-        "date": "2020",
-        "data": [
-          { "name": "苹果", "value": 2256 },
-          { "name": "沙特阿美", "value": 1869 },
-          { "name": "微软", "value": 1685 },
-          { "name": "亚马逊", "value": 1626 },
-          { "name": "谷歌（Alphabet）", "value": 1178 },
-          { "name": "脸书（Meta）", "value": 784 },
-          { "name": "腾讯控股", "value": 692 },
-          { "name": "特斯拉", "value": 669 },
-          { "name": "阿里巴巴", "value": 621 },
-          { "name": "伯克希尔哈撒韦", "value": 545 },
-          { "name": "台积电", "value": 459 },
-          { "name": "摩根大通", "value": 412 },
-          { "name": "Visa", "value": 399 },
-          { "name": "强生", "value": 393 },
-          { "name": "沃尔玛", "value": 393 },
-          { "name": "万事达卡", "value": 354 },
-          { "name": "三星电子", "value": 337 },
-          { "name": "奈飞（Netflix）", "value": 321 },
-          { "name": "雀巢", "value": 315 },
-          { "name": "宝洁", "value": 309 }
-        ]
-      },
-      {
-        "date": "2021",
-        "data": [
-          { "name": "苹果", "value": 2913 },
-          { "name": "微软", "value": 2539 },
-          { "name": "谷歌（Alphabet）", "value": 1924 },
-          { "name": "亚马逊", "value": 1710 },
-          { "name": "脸书（Meta）", "value": 939 },
-          { "name": "特斯拉", "value": 1063 },
-          { "name": "英伟达", "value": 759 },
-          { "name": "腾讯控股", "value": 691 },
-          { "name": "伯克希尔哈撒韦", "value": 684 },
-          { "name": "台积电", "value": 659 },
-          { "name": "摩根大通", "value": 547 },
-          { "name": "Visa", "value": 492 },
-          { "name": "强生", "value": 467 },
-          { "name": "沃尔玛", "value": 459 },
-          { "name": "万事达卡", "value": 412 },
-          { "name": "三星电子", "value": 410 },
-          { "name": "阿里巴巴", "value": 402 },
-          { "name": "奈飞（Netflix）", "value": 378 },
-          { "name": "联合健康", "value": 366 },
-          { "name": "宝洁", "value": 360 }
-        ]
-      },
-      {
-        "date": "2022",
-        "data": [
-          { "name": "苹果", "value": 2184 },
-          { "name": "沙特阿美", "value": 2150 },
-          { "name": "微软", "value": 1927 },
-          { "name": "谷歌（Alphabet）", "value": 1463 },
-          { "name": "亚马逊", "value": 1316 },
-          { "name": "伯克希尔哈撒韦", "value": 756 },
-          { "name": "特斯拉", "value": 689 },
-          { "name": "台积电", "value": 589 },
-          { "name": "英伟达", "value": 548 },
-          { "name": "腾讯控股", "value": 510 },
-          { "name": "摩根大通", "value": 498 },
-          { "name": "联合健康", "value": 486 },
-          { "name": "Visa", "value": 457 },
-          { "name": "沃尔玛", "value": 441 },
-          { "name": "强生", "value": 432 },
-          { "name": "万事达卡", "value": 412 },
-          { "name": "宝洁", "value": 389 },
-          { "name": "三星电子", "value": 378 },
-          { "name": "脸书（Meta）", "value": 366 },
-          { "name": "礼来（Eli Lilly）", "value": 360 }
-        ]
-      },
-      {
-        "date": "2023",
-        "data": [
-          { "name": "苹果", "value": 3019 },
-          { "name": "微软", "value": 2815 },
-          { "name": "谷歌（Alphabet）", "value": 1789 },
-          { "name": "亚马逊", "value": 1623 },
-          { "name": "英伟达", "value": 1491 },
-          { "name": "伯克希尔哈撒韦", "value": 896 },
-          { "name": "沙特阿美", "value": 2111 },
-          { "name": "Meta（脸书）", "value": 1189 },
-          { "name": "台积电", "value": 857 },
-          { "name": "特斯拉", "value": 789 },
-          { "name": "礼来（Eli Lilly）", "value": 687 },
-          { "name": "博通（Broadcom）", "value": 654 },
-          { "name": "摩根大通", "value": 598 },
-          { "name": "沃尔玛", "value": 547 },
-          { "name": "Visa", "value": 536 },
-          { "name": "埃克森美孚", "value": 512 },
-          { "name": "腾讯控股", "value": 498 },
-          { "name": "万事达卡", "value": 478 },
-          { "name": "强生", "value": 465 },
-          { "name": "宝洁", "value": 432 }
-        ]
-      },
-      {
-        "date": "2024",
-        "data": [
-          { "name": "微软", "value": 3150 },
-          { "name": "苹果", "value": 2980 },
-          { "name": "英伟达", "value": 2800 },
-          { "name": "谷歌（Alphabet）", "value": 2250 },
-          { "name": "亚马逊", "value": 2100 },
-          { "name": "沙特阿美", "value": 1920 },
-          { "name": "Meta（脸书）", "value": 1480 },
-          { "name": "伯克希尔哈撒韦", "value": 980 },
-          { "name": "台积电", "value": 950 },
-          { "name": "博通（Broadcom）", "value": 880 },
-          { "name": "特斯拉", "value": 850 },
-          { "name": "礼来（Eli Lilly）", "value": 820 },
-          { "name": "摩根大通", "value": 680 },
-          { "name": "沃尔玛", "value": 650 },
-          { "name": "Visa", "value": 620 },
-          { "name": "腾讯控股", "value": 580 },
-          { "name": "万事达卡", "value": 570 },
-          { "name": "埃克森美孚", "value": 530 },
-          { "name": "强生", "value": 480 },
-          { "name": "甲骨文", "value": 470 }
-        ]
-      },
-      {
-        "date": "2025",
-        "data": [
-          { "name": "英伟达", "value": 4386 },
-          { "name": "苹果", "value": 4100 },
-          { "name": "谷歌（Alphabet）", "value": 3780 },
-          { "name": "微软", "value": 3650 },
-          { "name": "亚马逊", "value": 2430 },
-          { "name": "Meta（脸书）", "value": 1790 },
-          { "name": "博通（Broadcom）", "value": 1600 },
-          { "name": "沙特阿美", "value": 1600 },
-          { "name": "台积电", "value": 1520 },
-          { "name": "特斯拉", "value": 1430 },
-          { "name": "伯克希尔哈撒韦", "value": 1080 },
-          { "name": "礼来（Eli Lilly）", "value": 950 },
-          { "name": "摩根大通", "value": 835 },
-          { "name": "沃尔玛", "value": 805 },
-          { "name": "甲骨文", "value": 703 },
-          { "name": "Visa", "value": 626 },
-          { "name": "万事达卡", "value": 596 },
-          { "name": "腾讯控股", "value": 580 },
-          { "name": "网飞（Netflix）", "value": 534 },
-          { "name": "强生", "value": 430 }
-        ]
-      }
+      "date": "2015",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 596
+        },
+        {
+          "name": "谷歌",
+          "value": 531
+        },
+        {
+          "name": "微软",
+          "value": 447
+        },
+        {
+          "name": "埃克森美孚",
+          "value": 376
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 324
+        },
+        {
+          "name": "亚马逊",
+          "value": 323
+        },
+        {
+          "name": "中国石油",
+          "value": 330
+        },
+        {
+          "name": "中国建设银行",
+          "value": 299
+        },
+        {
+          "name": "通用电气",
+          "value": 314
+        },
+        {
+          "name": "强生",
+          "value": 287
+        },
+        {
+          "name": "富国银行",
+          "value": 282
+        },
+        {
+          "name": "中国工商银行",
+          "value": 275
+        },
+        {
+          "name": "诺华",
+          "value": 268
+        },
+        {
+          "name": "沃尔玛",
+          "value": 248
+        },
+        {
+          "name": "摩根大通",
+          "value": 245
+        },
+        {
+          "name": "中国移动",
+          "value": 243
+        },
+        {
+          "name": "雀巢",
+          "value": 233
+        },
+        {
+          "name": "中国农业银行",
+          "value": 200
+        },
+        {
+          "name": "中国银行",
+          "value": 180
+        },
+        {
+          "name": "通用汽车",
+          "value": 170
+        }
+      ]
+    },
+    {
+      "date": "2016",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 607
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 569
+        },
+        {
+          "name": "微软",
+          "value": 507
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 396
+        },
+        {
+          "name": "亚马逊",
+          "value": 380
+        },
+        {
+          "name": "脸书（Meta）",
+          "value": 359
+        },
+        {
+          "name": "埃克森美孚",
+          "value": 347
+        },
+        {
+          "name": "强生",
+          "value": 319
+        },
+        {
+          "name": "摩根大通",
+          "value": 315
+        },
+        {
+          "name": "通用电气",
+          "value": 282
+        },
+        {
+          "name": "中国工商银行",
+          "value": 261
+        },
+        {
+          "name": "富国银行",
+          "value": 256
+        },
+        {
+          "name": "沃尔玛",
+          "value": 248
+        },
+        {
+          "name": "中国建设银行",
+          "value": 229
+        },
+        {
+          "name": "中国农业银行",
+          "value": 188
+        },
+        {
+          "name": "雀巢",
+          "value": 236
+        },
+        {
+          "name": "甲骨文",
+          "value": 208
+        },
+        {
+          "name": "可口可乐",
+          "value": 195
+        },
+        {
+          "name": "辉瑞",
+          "value": 194
+        },
+        {
+          "name": "威瑞森（Verizon）",
+          "value": 193
+        }
+      ]
+    },
+    {
+      "date": "2017",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 869
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 735
+        },
+        {
+          "name": "微软",
+          "value": 659
+        },
+        {
+          "name": "亚马逊",
+          "value": 587
+        },
+        {
+          "name": "脸书（Meta）",
+          "value": 512
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 492
+        },
+        {
+          "name": "阿里巴巴",
+          "value": 471
+        },
+        {
+          "name": "腾讯控股",
+          "value": 441
+        },
+        {
+          "name": "摩根大通",
+          "value": 388
+        },
+        {
+          "name": "强生",
+          "value": 376
+        },
+        {
+          "name": "埃克森美孚",
+          "value": 359
+        },
+        {
+          "name": "中国工商银行",
+          "value": 311
+        },
+        {
+          "name": "富国银行",
+          "value": 310
+        },
+        {
+          "name": "沃尔玛",
+          "value": 294
+        },
+        {
+          "name": "中国建设银行",
+          "value": 261
+        },
+        {
+          "name": "雀巢",
+          "value": 259
+        },
+        {
+          "name": "Visa",
+          "value": 250
+        },
+        {
+          "name": "宝洁",
+          "value": 241
+        },
+        {
+          "name": "中国农业银行",
+          "value": 214
+        },
+        {
+          "name": "AT&T",
+          "value": 210
+        }
+      ]
+    },
+    {
+      "date": "2018",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 877
+        },
+        {
+          "name": "亚马逊",
+          "value": 821
+        },
+        {
+          "name": "微软",
+          "value": 780
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 763
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 495
+        },
+        {
+          "name": "脸书（Meta）",
+          "value": 474
+        },
+        {
+          "name": "阿里巴巴",
+          "value": 435
+        },
+        {
+          "name": "腾讯控股",
+          "value": 426
+        },
+        {
+          "name": "摩根大通",
+          "value": 368
+        },
+        {
+          "name": "强生",
+          "value": 361
+        },
+        {
+          "name": "埃克森美孚",
+          "value": 343
+        },
+        {
+          "name": "沃尔玛",
+          "value": 308
+        },
+        {
+          "name": "中国工商银行",
+          "value": 305
+        },
+        {
+          "name": "Visa",
+          "value": 297
+        },
+        {
+          "name": "雀巢",
+          "value": 282
+        },
+        {
+          "name": "宝洁",
+          "value": 271
+        },
+        {
+          "name": "万事达卡",
+          "value": 259
+        },
+        {
+          "name": "中国建设银行",
+          "value": 256
+        },
+        {
+          "name": "富国银行",
+          "value": 247
+        },
+        {
+          "name": "英特尔",
+          "value": 239
+        }
+      ]
+    },
+    {
+      "date": "2019",
+      "data": [
+        {
+          "name": "微软",
+          "value": 1204
+        },
+        {
+          "name": "苹果",
+          "value": 1192
+        },
+        {
+          "name": "亚马逊",
+          "value": 916
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 915
+        },
+        {
+          "name": "脸书（Meta）",
+          "value": 585
+        },
+        {
+          "name": "阿里巴巴",
+          "value": 573
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 561
+        },
+        {
+          "name": "腾讯控股",
+          "value": 482
+        },
+        {
+          "name": "摩根大通",
+          "value": 425
+        },
+        {
+          "name": "Visa",
+          "value": 398
+        },
+        {
+          "name": "强生",
+          "value": 384
+        },
+        {
+          "name": "沃尔玛",
+          "value": 370
+        },
+        {
+          "name": "雀巢",
+          "value": 339
+        },
+        {
+          "name": "宝洁",
+          "value": 322
+        },
+        {
+          "name": "万事达卡",
+          "value": 315
+        },
+        {
+          "name": "中国工商银行",
+          "value": 305
+        },
+        {
+          "name": "英特尔",
+          "value": 289
+        },
+        {
+          "name": "AT&T",
+          "value": 282
+        },
+        {
+          "name": "埃克森美孚",
+          "value": 280
+        },
+        {
+          "name": "三星电子",
+          "value": 278
+        }
+      ]
+    },
+    {
+      "date": "2020",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 2256
+        },
+        {
+          "name": "沙特阿美",
+          "value": 1869
+        },
+        {
+          "name": "微软",
+          "value": 1685
+        },
+        {
+          "name": "亚马逊",
+          "value": 1626
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 1178
+        },
+        {
+          "name": "脸书（Meta）",
+          "value": 784
+        },
+        {
+          "name": "腾讯控股",
+          "value": 692
+        },
+        {
+          "name": "特斯拉",
+          "value": 669
+        },
+        {
+          "name": "阿里巴巴",
+          "value": 621
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 545
+        },
+        {
+          "name": "台积电",
+          "value": 459
+        },
+        {
+          "name": "摩根大通",
+          "value": 412
+        },
+        {
+          "name": "Visa",
+          "value": 399
+        },
+        {
+          "name": "强生",
+          "value": 393
+        },
+        {
+          "name": "沃尔玛",
+          "value": 393
+        },
+        {
+          "name": "万事达卡",
+          "value": 354
+        },
+        {
+          "name": "三星电子",
+          "value": 337
+        },
+        {
+          "name": "奈飞（Netflix）",
+          "value": 321
+        },
+        {
+          "name": "雀巢",
+          "value": 315
+        },
+        {
+          "name": "宝洁",
+          "value": 309
+        }
+      ]
+    },
+    {
+      "date": "2021",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 2913
+        },
+        {
+          "name": "微软",
+          "value": 2539
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 1924
+        },
+        {
+          "name": "亚马逊",
+          "value": 1710
+        },
+        {
+          "name": "脸书（Meta）",
+          "value": 939
+        },
+        {
+          "name": "特斯拉",
+          "value": 1063
+        },
+        {
+          "name": "英伟达",
+          "value": 759
+        },
+        {
+          "name": "腾讯控股",
+          "value": 691
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 684
+        },
+        {
+          "name": "台积电",
+          "value": 659
+        },
+        {
+          "name": "摩根大通",
+          "value": 547
+        },
+        {
+          "name": "Visa",
+          "value": 492
+        },
+        {
+          "name": "强生",
+          "value": 467
+        },
+        {
+          "name": "沃尔玛",
+          "value": 459
+        },
+        {
+          "name": "万事达卡",
+          "value": 412
+        },
+        {
+          "name": "三星电子",
+          "value": 410
+        },
+        {
+          "name": "阿里巴巴",
+          "value": 402
+        },
+        {
+          "name": "奈飞（Netflix）",
+          "value": 378
+        },
+        {
+          "name": "联合健康",
+          "value": 366
+        },
+        {
+          "name": "宝洁",
+          "value": 360
+        }
+      ]
+    },
+    {
+      "date": "2022",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 2184
+        },
+        {
+          "name": "沙特阿美",
+          "value": 2150
+        },
+        {
+          "name": "微软",
+          "value": 1927
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 1463
+        },
+        {
+          "name": "亚马逊",
+          "value": 1316
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 756
+        },
+        {
+          "name": "特斯拉",
+          "value": 689
+        },
+        {
+          "name": "台积电",
+          "value": 589
+        },
+        {
+          "name": "英伟达",
+          "value": 548
+        },
+        {
+          "name": "腾讯控股",
+          "value": 510
+        },
+        {
+          "name": "摩根大通",
+          "value": 498
+        },
+        {
+          "name": "联合健康",
+          "value": 486
+        },
+        {
+          "name": "Visa",
+          "value": 457
+        },
+        {
+          "name": "沃尔玛",
+          "value": 441
+        },
+        {
+          "name": "强生",
+          "value": 432
+        },
+        {
+          "name": "万事达卡",
+          "value": 412
+        },
+        {
+          "name": "宝洁",
+          "value": 389
+        },
+        {
+          "name": "三星电子",
+          "value": 378
+        },
+        {
+          "name": "脸书（Meta）",
+          "value": 366
+        },
+        {
+          "name": "礼来（Eli Lilly）",
+          "value": 360
+        }
+      ]
+    },
+    {
+      "date": "2023",
+      "data": [
+        {
+          "name": "苹果",
+          "value": 3019
+        },
+        {
+          "name": "微软",
+          "value": 2815
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 1789
+        },
+        {
+          "name": "亚马逊",
+          "value": 1623
+        },
+        {
+          "name": "英伟达",
+          "value": 1491
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 896
+        },
+        {
+          "name": "沙特阿美",
+          "value": 2111
+        },
+        {
+          "name": "Meta（脸书）",
+          "value": 1189
+        },
+        {
+          "name": "台积电",
+          "value": 857
+        },
+        {
+          "name": "特斯拉",
+          "value": 789
+        },
+        {
+          "name": "礼来（Eli Lilly）",
+          "value": 687
+        },
+        {
+          "name": "博通（Broadcom）",
+          "value": 654
+        },
+        {
+          "name": "摩根大通",
+          "value": 598
+        },
+        {
+          "name": "沃尔玛",
+          "value": 547
+        },
+        {
+          "name": "Visa",
+          "value": 536
+        },
+        {
+          "name": "埃克森美孚",
+          "value": 512
+        },
+        {
+          "name": "腾讯控股",
+          "value": 498
+        },
+        {
+          "name": "万事达卡",
+          "value": 478
+        },
+        {
+          "name": "强生",
+          "value": 465
+        },
+        {
+          "name": "宝洁",
+          "value": 432
+        }
+      ]
+    },
+    {
+      "date": "2024",
+      "data": [
+        {
+          "name": "微软",
+          "value": 3150
+        },
+        {
+          "name": "苹果",
+          "value": 2980
+        },
+        {
+          "name": "英伟达",
+          "value": 2800
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 2250
+        },
+        {
+          "name": "亚马逊",
+          "value": 2100
+        },
+        {
+          "name": "沙特阿美",
+          "value": 1920
+        },
+        {
+          "name": "Meta（脸书）",
+          "value": 1480
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 980
+        },
+        {
+          "name": "台积电",
+          "value": 950
+        },
+        {
+          "name": "博通（Broadcom）",
+          "value": 880
+        },
+        {
+          "name": "特斯拉",
+          "value": 850
+        },
+        {
+          "name": "礼来（Eli Lilly）",
+          "value": 820
+        },
+        {
+          "name": "摩根大通",
+          "value": 680
+        },
+        {
+          "name": "沃尔玛",
+          "value": 650
+        },
+        {
+          "name": "Visa",
+          "value": 620
+        },
+        {
+          "name": "腾讯控股",
+          "value": 580
+        },
+        {
+          "name": "万事达卡",
+          "value": 570
+        },
+        {
+          "name": "埃克森美孚",
+          "value": 530
+        },
+        {
+          "name": "强生",
+          "value": 480
+        },
+        {
+          "name": "甲骨文",
+          "value": 470
+        }
+      ]
+    },
+    {
+      "date": "2025",
+      "data": [
+        {
+          "name": "英伟达",
+          "value": 4386
+        },
+        {
+          "name": "苹果",
+          "value": 4100
+        },
+        {
+          "name": "谷歌（Alphabet）",
+          "value": 3780
+        },
+        {
+          "name": "微软",
+          "value": 3650
+        },
+        {
+          "name": "亚马逊",
+          "value": 2430
+        },
+        {
+          "name": "Meta（脸书）",
+          "value": 1790
+        },
+        {
+          "name": "博通（Broadcom）",
+          "value": 1600
+        },
+        {
+          "name": "沙特阿美",
+          "value": 1600
+        },
+        {
+          "name": "台积电",
+          "value": 1520
+        },
+        {
+          "name": "特斯拉",
+          "value": 1430
+        },
+        {
+          "name": "伯克希尔哈撒韦",
+          "value": 1080
+        },
+        {
+          "name": "礼来（Eli Lilly）",
+          "value": 950
+        },
+        {
+          "name": "摩根大通",
+          "value": 835
+        },
+        {
+          "name": "沃尔玛",
+          "value": 805
+        },
+        {
+          "name": "甲骨文",
+          "value": 703
+        },
+        {
+          "name": "Visa",
+          "value": 626
+        },
+        {
+          "name": "万事达卡",
+          "value": 596
+        },
+        {
+          "name": "腾讯控股",
+          "value": 580
+        },
+        {
+          "name": "网飞（Netflix）",
+          "value": 534
+        },
+        {
+          "name": "强生",
+          "value": 430
+        }
+      ]
+    }
   ],
   "nameMapping": {
-    "苹果": { "nameZh": "苹果", "nameEn": "Apple" },
-    "谷歌": { "nameZh": "谷歌", "nameEn": "Google" },
-    "谷歌（Alphabet）": { "nameZh": "谷歌", "nameEn": "Google" },
-    "微软": { "nameZh": "微软", "nameEn": "Microsoft" },
-    "亚马逊": { "nameZh": "亚马逊", "nameEn": "Amazon" },
-    "Meta": { "nameZh": "Meta", "nameEn": "Meta" },
-    "脸书（Meta）": { "nameZh": "Meta", "nameEn": "Meta" },
-    "Meta（脸书）": { "nameZh": "Meta", "nameEn": "Meta" },
-    "特斯拉": { "nameZh": "特斯拉", "nameEn": "Tesla" },
-    "英伟达": { "nameZh": "英伟达", "nameEn": "NVIDIA" },
-    "腾讯": { "nameZh": "腾讯", "nameEn": "Tencent" },
-    "腾讯控股": { "nameZh": "腾讯", "nameEn": "Tencent" },
-    "阿里巴巴": { "nameZh": "阿里巴巴", "nameEn": "Alibaba" },
-    "伯克希尔哈撒韦": { "nameZh": "伯克希尔哈撒韦", "nameEn": "Berkshire Hathaway" },
-    "台积电": { "nameZh": "台积电", "nameEn": "TSMC" },
-    "摩根大通": { "nameZh": "摩根大通", "nameEn": "JPMorgan Chase" },
-    "Visa": { "nameZh": "维萨", "nameEn": "Visa" },
-    "强生": { "nameZh": "强生", "nameEn": "Johnson & Johnson" },
-    "沃尔玛": { "nameZh": "沃尔玛", "nameEn": "Walmart" },
-    "万事达卡": { "nameZh": "万事达卡", "nameEn": "Mastercard" },
-    "沙特阿美": { "nameZh": "沙特阿美", "nameEn": "Saudi Aramco" },
-    "埃克森美孚": { "nameZh": "埃克森美孚", "nameEn": "ExxonMobil" },
-    "宝洁": { "nameZh": "宝洁", "nameEn": "Procter & Gamble" },
-    "雀巢": { "nameZh": "雀巢", "nameEn": "Nestlé" },
-    "中国工商银行": { "nameZh": "中国工商银行", "nameEn": "ICBC" },
-    "中国建设银行": { "nameZh": "中国建设银行", "nameEn": "CCB" },
-    "中国农业银行": { "nameZh": "中国农业银行", "nameEn": "ABC" },
-    "中国银行": { "nameZh": "中国银行", "nameEn": "Bank of China" },
-    "中国移动": { "nameZh": "中国移动", "nameEn": "China Mobile" },
-    "中国石油": { "nameZh": "中国石油", "nameEn": "PetroChina" },
-    "通用电气": { "nameZh": "通用电气", "nameEn": "General Electric" },
-    "富国银行": { "nameZh": "富国银行", "nameEn": "Wells Fargo" },
-    "诺华": { "nameZh": "诺华", "nameEn": "Novartis" },
-    "通用汽车": { "nameZh": "通用汽车", "nameEn": "General Motors" },
-    "甲骨文": { "nameZh": "甲骨文", "nameEn": "Oracle" },
-    "可口可乐": { "nameZh": "可口可乐", "nameEn": "Coca-Cola" },
-    "辉瑞": { "nameZh": "辉瑞", "nameEn": "Pfizer" },
-    "威瑞森（Verizon）": { "nameZh": "威瑞森", "nameEn": "Verizon" },
-    "AT&T": { "nameZh": "AT&T", "nameEn": "AT&T" },
-    "英特尔": { "nameZh": "英特尔", "nameEn": "Intel" },
-    "三星电子": { "nameZh": "三星电子", "nameEn": "Samsung Electronics" },
-    "奈飞（Netflix）": { "nameZh": "奈飞", "nameEn": "Netflix" },
-    "网飞（Netflix）": { "nameZh": "奈飞", "nameEn": "Netflix" },
-    "联合健康": { "nameZh": "联合健康", "nameEn": "UnitedHealth" },
-    "联合健康集团": { "nameZh": "联合健康", "nameEn": "UnitedHealth" },
-    "礼来（Eli Lilly）": { "nameZh": "礼来", "nameEn": "Eli Lilly" },
-    "礼来": { "nameZh": "礼来", "nameEn": "Eli Lilly" },
-    "博通（Broadcom）": { "nameZh": "博通", "nameEn": "Broadcom" },
-    "博通": { "nameZh": "博通", "nameEn": "Broadcom" },
-    "雪佛龙": { "nameZh": "雪佛龙", "nameEn": "Chevron" },
-    "家得宝": { "nameZh": "家得宝", "nameEn": "Home Depot" },
-    "耐克": { "nameZh": "耐克", "nameEn": "Nike" }
+    "苹果": {
+      "nameZh": "苹果",
+      "nameEn": "Apple"
+    },
+    "谷歌": {
+      "nameZh": "谷歌",
+      "nameEn": "Google"
+    },
+    "谷歌（Alphabet）": {
+      "nameZh": "谷歌",
+      "nameEn": "Google"
+    },
+    "微软": {
+      "nameZh": "微软",
+      "nameEn": "Microsoft"
+    },
+    "亚马逊": {
+      "nameZh": "亚马逊",
+      "nameEn": "Amazon"
+    },
+    "Meta": {
+      "nameZh": "Meta",
+      "nameEn": "Meta"
+    },
+    "脸书（Meta）": {
+      "nameZh": "Meta",
+      "nameEn": "Meta"
+    },
+    "Meta（脸书）": {
+      "nameZh": "Meta",
+      "nameEn": "Meta"
+    },
+    "特斯拉": {
+      "nameZh": "特斯拉",
+      "nameEn": "Tesla"
+    },
+    "英伟达": {
+      "nameZh": "英伟达",
+      "nameEn": "NVIDIA"
+    },
+    "腾讯": {
+      "nameZh": "腾讯",
+      "nameEn": "Tencent"
+    },
+    "腾讯控股": {
+      "nameZh": "腾讯",
+      "nameEn": "Tencent"
+    },
+    "阿里巴巴": {
+      "nameZh": "阿里巴巴",
+      "nameEn": "Alibaba"
+    },
+    "伯克希尔哈撒韦": {
+      "nameZh": "伯克希尔哈撒韦",
+      "nameEn": "Berkshire Hathaway"
+    },
+    "台积电": {
+      "nameZh": "台积电",
+      "nameEn": "TSMC"
+    },
+    "摩根大通": {
+      "nameZh": "摩根大通",
+      "nameEn": "JPMorgan Chase"
+    },
+    "Visa": {
+      "nameZh": "维萨",
+      "nameEn": "Visa"
+    },
+    "强生": {
+      "nameZh": "强生",
+      "nameEn": "Johnson & Johnson"
+    },
+    "沃尔玛": {
+      "nameZh": "沃尔玛",
+      "nameEn": "Walmart"
+    },
+    "万事达卡": {
+      "nameZh": "万事达卡",
+      "nameEn": "Mastercard"
+    },
+    "沙特阿美": {
+      "nameZh": "沙特阿美",
+      "nameEn": "Saudi Aramco"
+    },
+    "埃克森美孚": {
+      "nameZh": "埃克森美孚",
+      "nameEn": "ExxonMobil"
+    },
+    "宝洁": {
+      "nameZh": "宝洁",
+      "nameEn": "Procter & Gamble"
+    },
+    "雀巢": {
+      "nameZh": "雀巢",
+      "nameEn": "Nestlé"
+    },
+    "中国工商银行": {
+      "nameZh": "中国工商银行",
+      "nameEn": "ICBC"
+    },
+    "中国建设银行": {
+      "nameZh": "中国建设银行",
+      "nameEn": "CCB"
+    },
+    "中国农业银行": {
+      "nameZh": "中国农业银行",
+      "nameEn": "ABC"
+    },
+    "中国银行": {
+      "nameZh": "中国银行",
+      "nameEn": "Bank of China"
+    },
+    "中国移动": {
+      "nameZh": "中国移动",
+      "nameEn": "China Mobile"
+    },
+    "中国石油": {
+      "nameZh": "中国石油",
+      "nameEn": "PetroChina"
+    },
+    "通用电气": {
+      "nameZh": "通用电气",
+      "nameEn": "General Electric"
+    },
+    "富国银行": {
+      "nameZh": "富国银行",
+      "nameEn": "Wells Fargo"
+    },
+    "诺华": {
+      "nameZh": "诺华",
+      "nameEn": "Novartis"
+    },
+    "通用汽车": {
+      "nameZh": "通用汽车",
+      "nameEn": "General Motors"
+    },
+    "甲骨文": {
+      "nameZh": "甲骨文",
+      "nameEn": "Oracle"
+    },
+    "可口可乐": {
+      "nameZh": "可口可乐",
+      "nameEn": "Coca-Cola"
+    },
+    "辉瑞": {
+      "nameZh": "辉瑞",
+      "nameEn": "Pfizer"
+    },
+    "威瑞森（Verizon）": {
+      "nameZh": "威瑞森",
+      "nameEn": "Verizon"
+    },
+    "AT&T": {
+      "nameZh": "AT&T",
+      "nameEn": "AT&T"
+    },
+    "英特尔": {
+      "nameZh": "英特尔",
+      "nameEn": "Intel"
+    },
+    "三星电子": {
+      "nameZh": "三星电子",
+      "nameEn": "Samsung Electronics"
+    },
+    "奈飞（Netflix）": {
+      "nameZh": "奈飞",
+      "nameEn": "Netflix"
+    },
+    "网飞（Netflix）": {
+      "nameZh": "奈飞",
+      "nameEn": "Netflix"
+    },
+    "联合健康": {
+      "nameZh": "联合健康",
+      "nameEn": "UnitedHealth"
+    },
+    "联合健康集团": {
+      "nameZh": "联合健康",
+      "nameEn": "UnitedHealth"
+    },
+    "礼来（Eli Lilly）": {
+      "nameZh": "礼来",
+      "nameEn": "Eli Lilly"
+    },
+    "礼来": {
+      "nameZh": "礼来",
+      "nameEn": "Eli Lilly"
+    },
+    "博通（Broadcom）": {
+      "nameZh": "博通",
+      "nameEn": "Broadcom"
+    },
+    "博通": {
+      "nameZh": "博通",
+      "nameEn": "Broadcom"
+    },
+    "雪佛龙": {
+      "nameZh": "雪佛龙",
+      "nameEn": "Chevron"
+    },
+    "家得宝": {
+      "nameZh": "家得宝",
+      "nameEn": "Home Depot"
+    },
+    "耐克": {
+      "nameZh": "耐克",
+      "nameEn": "Nike"
+    }
   },
   "colors": {
     "default": "#3b82f6",
@@ -390,7 +1206,6 @@
     "家得宝": "#FF6600",
     "耐克": "#FF00FF"
   },
-  "specialItems": ["英伟达"],
   "valueFormat": {
     "prefix": "$",
     "suffix": "B",
@@ -400,7 +1215,7 @@
   "animation": {
     "interpolationSteps": 80,
     "durationPerKeyframe": 5000,
-    "topN": 10
+    "topN": 20
   },
   "chart": {
     "maxValue": null,
