@@ -1,156 +1,140 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>排名变化数据可视化</title>
+    <title>Dynamic Ranking Chart</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <!-- D3.js -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
-  </head>
+</head>
 
-  <body>
-    <!-- Top Controls -->
-    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn">🌓 主题</button>
-    <button class="fullscreen-toggle" onclick="toggleFullscreen()" id="fullscreenBtn">全屏</button>
-    <button class="fullscreen-exit" id="fullscreenExitBtn">退出全屏</button>
-    <button class="config-toggle" onclick="toggleConfig()">⚙️ 配置</button>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="chart-header">
+            <h1 class="chart-title" id="title" contenteditable="true" spellcheck="false">Ranking Chart</h1>
+        </header>
 
-    <!-- Configuration Panel -->
-    <div class="config-panel" id="configPanel">
-      <div class="config-header">
-        <h2>图表配置</h2>
-        <button class="config-close" onclick="toggleConfig()">×</button>
-      </div>
-      <div class="config-content">
-        <form id="configForm" onsubmit="handleSubmit(event)">
-          <!-- Actions -->
-          <div class="config-section collapsed">
-            <div class="config-section-title" onclick="toggleSection(this)">操作</div>
-            <div class="config-section-content">
-              <button type="submit" class="btn-primary">应用配置</button>
-              <div style="margin-top: 10px">
-                <button type="button" class="btn-secondary" onclick="exportConfig(window.CONFIG)">导出JSON</button>
-                <button type="button" class="btn-secondary" onclick="loadConfig()">从文件加载</button>
-                <input type="file" id="configFileInput" accept=".json" style="display: none" onchange="handleFileLoad(event)" />
-              </div>
-            </div>
-          </div>
+        <!-- Main Chart -->
+        <div class="chart-wrapper" id="chartWrapper">
+            <!-- Year background -->
+            <div id="yearDisplay" class="year-display"></div>
+            <!-- SVG Container -->
+            <div id="chart" style="width:100%; height:100%;"></div>
+        </div>
 
-
-
-          <!-- Basic Info -->
-          <div class="config-section collapsed">
-            <div class="config-section-title" onclick="toggleSection(this)">基础信息</div>
-            <div class="config-section-content">
-              <div class="form-group">
-                <label>标题</label>
-                <input type="text" id="configTitle" required />
-              </div>
-              <div class="form-group">
-                <label class="checkbox-group">
-                  <input type="checkbox" id="useEnglishNames" /> <span>使用英文名字</span>
-                </label>
-              </div>
-              <div class="form-group">
-                <label class="checkbox-group">
-                  <input type="checkbox" id="showCountryName" /> <span>显示国家名 (需数据支持)</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mappings -->
-          <div class="config-section collapsed">
-            <div class="config-section-title" onclick="toggleSection(this)">名字映射配置</div>
-            <div class="config-section-content">
-              <div class="form-group">
-                <label>JSON格式</label>
-                <textarea id="nameMapping" placeholder='{"标识": {"nameZh": "中文", "nameEn": "English"}}' style="min-height: 150px;"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <!-- Colors -->
-          <div class="config-section collapsed">
-            <div class="config-section-title" onclick="toggleSection(this)">颜色配置</div>
-            <div class="config-section-content">
-              <div class="form-row">
-                <div class="form-group"><label>默认</label><input type="color" id="colorDefault" /></div>
-                <div class="form-group"><label>第一名</label><input type="color" id="colorFirstPlace" /></div>
-              </div>
-              <div class="form-group">
-                <label>个别颜色映射 (JSON)</label>
-                <textarea id="itemColors" placeholder='{"标识": "#ff0000"}'></textarea>
-              </div>
-            </div>
-          </div>
-
-          <!-- Data -->
-          <div class="config-section collapsed">
-            <div class="config-section-title" onclick="toggleSection(this)">数据配置</div>
-            <div class="config-section-content">
-              <div style="background: var(--bg-secondary); padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-                <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">💡 快速粘贴 (Excel/文本)</div>
-                <textarea id="quickPasteArea" style="width: 100%; min-height: 100px; margin-bottom: 8px;" placeholder="名称	数值"></textarea>
-                <div style="display: flex; gap: 10px;">
-                    <button type="button" class="btn-add" onclick="quickPasteToKeyframe()" style="flex: 1;">粘贴到最新时间点</button>
-                    <button type="button" class="btn-secondary" onclick="clearQuickPaste()">清空</button>
-                </div>
-              </div>
-              <div id="keyframesContainer"></div>
-              <button type="button" class="btn-add" onclick="addKeyframe()">+ 添加时间点</button>
-            </div>
-          </div>
-
-          <!-- Value Format -->
-          <div class="config-section collapsed">
-             <div class="config-section-title" onclick="toggleSection(this)">数值格式</div>
-             <div class="config-section-content">
-                <div class="form-row">
-                    <div class="form-group"><label>前缀</label><input type="text" id="valuePrefix"></div>
-                    <div class="form-group"><label>后缀</label><input type="text" id="valueSuffix"></div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group"><label>小数位</label><input type="number" id="valueDecimals" min="0" max="10"></div>
-                    <div class="form-group" style="display:flex; align-items:center;"><label><input type="checkbox" id="valueUseCommas"> 千分位</label></div>
-                </div>
-             </div>
-          </div>
-
-          <!-- Animation -->
-          <div class="config-section collapsed">
-            <div class="config-section-title" onclick="toggleSection(this)">动画配置</div>
-            <div class="config-section-content">
-                <div class="form-row">
-                    <div class="form-group"><label>过渡帧数</label><input type="number" id="animSteps" min="10"></div>
-                    <div class="form-group"><label>每帧时长(ms)</label><input type="number" id="animDuration" min="500"></div>
-                </div>
-                <div class="form-group"><label>显示前N名</label><input type="number" id="animTopN" min="1"></div>
-            </div>
-          </div>
-
-        </form>
-      </div>
+        <!-- Floating Controls -->
+        <div class="controls-bar glass-panel">
+            <button class="control-btn" onclick="togglePlayPause()" id="playPauseBtn" title="Play/Pause">
+                <!-- Play Icon -->
+                <svg viewBox="0 0 24 24" id="iconPlay">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                <!-- Pause Icon (Hidden by default) -->
+                <svg viewBox="0 0 24 24" id="iconPause" style="display:none;">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+            </button>
+            <button class="control-btn" onclick="restart()" title="Restart">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
+                </svg>
+            </button>
+            <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.2); margin: 0 4px;"></div>
+            <button class="control-btn" onclick="toggleConfig()" title="Settings">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L7.61 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.04.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.57 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+                </svg>
+            </button>
+            <button class="control-btn" onclick="toggleFullscreen()" title="Fullscreen">
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                </svg>
+            </button>
+        </div>
     </div>
 
-    <!-- Main Chart Content -->
-    <div class="chart-container">
-      <div class="controls">
-        <button onclick="play()">播放</button>
-        <button onclick="pause()">暂停</button>
-        <button onclick="restart()">重播</button>
-        <button onclick="document.getElementById('title').style.display = document.getElementById('title').style.display === 'none' ? 'block' : 'none'">标题开关</button>
-        <button onclick="toggleLang()" id="langToggleBtn">切换语言</button>
-      </div>
-      
-      <div class="chart-wrapper">
-        <h1 id="title" contenteditable="true" oninput="handleTitleEdit(this.textContent)">Top Ranking</h1>
-        <div class="chart" id="chart" style="width:100%; height:100%;">
-          <!-- SVG will be appended here -->
+    <!-- Right Config Panel -->
+    <div class="config-modal" id="configPanel">
+        <div class="config-header">
+            <h2 style="margin:0; font-size:1.2rem;">Configuration</h2>
+            <button class="control-btn" onclick="toggleConfig()">✕</button>
         </div>
-      </div>
+        <div class="config-content">
+            <form id="configForm" onsubmit="handleSubmit(event)">
+                
+                <!-- Quick Data Input -->
+                <div class="config-section">
+                    <div class="config-section-title" onclick="toggleSection(this)">
+                        <span>📊 Data Source</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="config-section-content">
+                        <div class="form-group">
+                            <label>Simplified JSON Data</label>
+                            <textarea id="simpleDataInput" rows="10" placeholder='{
+  "title": "My Chart",
+  "data": [
+    {"date": "2020", "A": 10, "B": 20},
+    {"date": "2021", "A": 15, "B": 25}
+  ]
+}' style="font-family: monospace; font-size: 12px;"></textarea>
+                        </div>
+                        <button type="button" class="btn-primary" onclick="applySimpleData()">Apply Data</button>
+                        <hr style="border:0; border-top:1px solid var(--glass-border); margin:15px 0;">
+                        <input type="file" id="configFileInput" accept=".json" style="display: none" onchange="handleFileLoad(event)" />
+                        <button type="button" class="control-btn" style="width:100%; justify-content:center; background:rgba(255,255,255,0.05);" onclick="document.getElementById('configFileInput').click()">Load JSON File</button>
+                    </div>
+                </div>
+
+                <!-- Appearance -->
+                <div class="config-section">
+                    <div class="config-section-title" onclick="toggleSection(this)">
+                        <span>🎨 Appearance</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="config-section-content" style="display:none;">
+                        <div class="form-group">
+                            <label>Chart Title</label>
+                            <input type="text" id="configTitle" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Value Prefix (e.g. $)</label>
+                            <input type="text" id="configPrefix" class="form-control" placeholder="e.g. $">
+                        </div>
+                        <div class="form-group">
+                            <label>Value Suffix (e.g. 美元)</label>
+                            <input type="text" id="configSuffix" class="form-control" placeholder="e.g. $ or人">
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Bars (Top N)</label>
+                            <input type="number" id="animTopN" class="form-control" value="12">
+                        </div>
+                        <div class="form-group">
+                            <label>Animation Duration (ms per step)</label>
+                            <input type="number" id="animDuration" class="form-control" value="3000">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="useEnglishNames"> Use English Names
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Action Buttons -->
+                 <div style="margin-top:20px;">
+                    <button type="submit" class="btn-primary">Update Config</button>
+                    <button type="button" class="control-btn" style="width:100%; margin-top:10px; justify-content:center;" onclick="exportConfig(window.CONFIG)">Download JSON</button>
+                 </div>
+
+            </form>
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -159,18 +143,12 @@
     <script src="js/chart.js"></script>
     
     <script>
-      // Global Lang Toggle Implementation
-      function toggleLang() {
-        if (!window.CONFIG) return;
-        window.CONFIG.useEnglishNames = !window.CONFIG.useEnglishNames;
-        const btn = document.getElementById("langToggleBtn");
-        if (btn) btn.textContent = window.CONFIG.useEnglishNames ? "切换到中文" : "Switch to English";
-        document.getElementById("useEnglishNames").checked = window.CONFIG.useEnglishNames;
-        window.refreshChart();
-      }
-
-      // Start
-      window.addEventListener('load', initChart);
+        // Init
+        window.addEventListener('load', () => {
+            initChart();
+            // Try to load initial config from a default file if exists, or use demo data
+            // loadConfigFromFile("config.json").then(config => window.CONFIG = config).catch(() => {});
+        });
     </script>
-  </body>
+</body>
 </html>

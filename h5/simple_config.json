@@ -1,0 +1,52 @@
+{
+  "title": "Top Tech Companies Revenue (Billion USD)",
+  "data": [
+    {
+      "date": "2018",
+      "Apple": 265,
+      "Google": 136,
+      "Microsoft": 110,
+      "Amazon": 232
+    },
+    {
+      "date": "2019",
+      "Apple": 260,
+      "Google": 161,
+      "Microsoft": 125,
+      "Amazon": 280
+    },
+    {
+      "date": "2020",
+      "Apple": 274,
+      "Google": 182,
+      "Microsoft": 143,
+      "Amazon": 386
+    },
+    {
+      "date": "2021",
+      "Apple": 365,
+      "Google": 257,
+      "Microsoft": 168,
+      "Amazon": 469
+    },
+    {
+      "date": "2022",
+      "Apple": 394,
+      "Google": 282,
+      "Microsoft": 198,
+      "Amazon": 513
+    }
+  ],
+  "meta": {
+    "colors": {
+      "default": "#3b82f6",
+      "firstPlace": "#ef4444"
+    },
+    "itemColors": {
+      "Apple": "#a3a3a3",
+      "Google": "#4285F4",
+      "Microsoft": "#737373",
+      "Amazon": "#ea580c"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "title": "Global Tech Ranking 2020-2025",
+  "data": [
+    {
+      "date": "2020",
+      "Apple": 2200,
+      "Microsoft": 1600,
+      "Google": 1100,
+      "Amazon": 1500,
+      "Tesla": 600
+    },
+    {
+      "date": "2021",
+      "Apple": 2900,
+      "Microsoft": 2500,
+      "Google": 1900,
+      "Amazon": 1700,
+      "Tesla": 1000
+    },
+    {
+      "date": "2022",
+      "Apple": 2100,
+      "Microsoft": 1900,
+      "Google": 1400,
+      "Amazon": 1300,
+      "Tesla": 600
+    },
+    {
+      "date": "2023",
+      "Apple": 3000,
+      "Microsoft": 2800,
+      "Google": 1800,
+      "Amazon": 1600,
+      "Tesla": 800
+    },
+    {
+      "date": "2024",
+      "Apple": 3500,
+      "Microsoft": 3200,
+      "Google": 2300,
+      "Amazon": 2000,
+      "Tesla": 950
+    }
+  ],
+  "meta": {
+    "useEnglishNames": true,
+    "valueFormat": {
+      "prefix": "",
+      "suffix": " $",
+      "decimals": 0,
+      "useCommas": true
+    },
+    "animation": {
+      "interpolationSteps": 20,
+      "durationPerKeyframe": 3000,
+      "topN": 10
+    },
+    "colors": {
+      "default": "#3b82f6",
+      "firstPlace": "#ef4444"
+    },
+    "itemColors": {
+      "Apple": "#a3a3a3",
+      "Google": "#4285F4",
+      "Microsoft": "#00A4EF",
+      "Amazon": "#FF9900",
+      "Tesla": "#CC0000"
+    },
+    "nameMapping": {
+      "Apple": {
+        "nameZh": "苹果",
+        "nameEn": "Apple"
+      },
+      "Google": {
+        "nameZh": "谷歌",
+        "nameEn": "Google"
+      },
+      "Microsoft": {
+        "nameZh": "微软",
+        "nameEn": "Microsoft"
+      },
+      "Amazon": {
+        "nameZh": "亚马逊",
+        "nameEn": "Amazon"
+      },
+      "Tesla": {
+        "nameZh": "特斯拉",
+        "nameEn": "Tesla"
+      }
+    }
+  }
+}
