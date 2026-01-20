@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3.js 散点图示例</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    
+    #chart {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    svg {
+      border: 1px solid #ddd;
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>D3.js 散点图示例</h1>
+    <div id="chart"></div>
+  </div>
+
+  <script>
+    // 1. 选择chart元素，添加SVG绘图容器（设置宽高）
+    var svg = d3.select("#chart").append("svg")
+      .attr("width", 500)  // SVG容器宽度
+      .attr("height", 300); // SVG容器高度
+
+    // 2. 定义模拟数据（实际开发中可替换为JSON/CSV等真实数据）
+    var data = [{x: 10, y: 20}, {x: 30, y: 50}, {x: 50, y: 30}, {x: 70, y: 80}];
+
+    // 3. 数据绑定与图形绘制核心逻辑
+    svg.selectAll("circle")  // 选择所有circle元素（初始为空）
+      .data(data)            // 将data数组与circle元素绑定
+      .enter()               // 检测数据与元素的差异，为缺失的元素创建占位符
+      .append("circle")      // 为每个占位符添加circle元素（散点）
+      .attr("cx", function(d) { return d.x * 5; })  // 设置圆心x坐标（d代表单个数据对象，放大5倍适配容器）
+      .attr("cy", function(d) { return 300 - d.y * 5; })  // 设置圆心y坐标（翻转y轴，符合视觉习惯）
+      .attr("r", 5)          // 设置散点半径
+      .style("fill", "blue") // 设置散点填充色
+      .style("opacity", 0.7); // 设置透明度，提升视觉效果
+  </script>
+</body>
+</html>
