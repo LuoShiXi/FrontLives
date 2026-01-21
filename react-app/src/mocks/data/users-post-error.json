@@ -1,0 +1,10 @@
+{
+  "validationError": {
+    "success": false,
+    "message": "姓名和邮箱不能为空"
+  },
+  "formatError": {
+    "success": false,
+    "message": "请求数据格式错误"
+  }
+}

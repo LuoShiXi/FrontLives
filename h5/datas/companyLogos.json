@@ -3,271 +3,271 @@
     "name": "苹果",
     "nameZh": "苹果",
     "nameEn": "Apple",
-    "logo": "https://www.apple.com.cn/home/images/wechat/open_graph_logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
   },
   {
     "name": "微软",
     "nameZh": "微软",
     "nameEn": "Microsoft",
-    "logo": "https://images.seeklogo.com/logo-png/16/2/microsoft-logo-png_seeklogo-168319.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
   },
   {
     "name": "英伟达",
     "nameZh": "英伟达",
     "nameEn": "NVIDIA",
-    "logo": "https://www.stickpng.com/assets/images/6115e7f0b3b6d30004a4a4f0.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg"
   },
   {
     "name": "谷歌",
     "nameZh": "谷歌",
     "nameEn": "Alphabet / Google",
-    "logo": "https://pngimg.com/uploads/google/google_PNG19644.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
   },
   {
     "name": "亚马逊",
     "nameZh": "亚马逊",
     "nameEn": "Amazon",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c4.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
   },
   {
     "name": "Meta",
     "nameZh": "Meta",
     "nameEn": "Meta",
     "nameOld": "脸书",
-    "logo": "https://pngimg.com/uploads/meta/meta_PNG5.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
   },
   {
     "name": "脸书",
     "nameZh": "脸书",
     "nameEn": "Meta",
-    "logo": "https://pngimg.com/uploads/meta/meta_PNG5.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
   },
   {
     "name": "沙特阿美",
     "nameZh": "沙特阿美",
     "nameEn": "Saudi Aramco",
-    "logo": "https://brandslogos.com/wp-content/uploads/2019/08/saudi-aramco-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Saudi_Aramco_Logo.svg"
   },
   {
     "name": "伯克希尔哈撒韦",
     "nameZh": "伯克希尔哈撒韦",
     "nameEn": "Berkshire Hathaway",
-    "logo": "https://www.freepnglogos.com/images/all_img_version_of_berkshire-hathaway-logo-png-3.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Berkshire_Hathaway_logo.svg"
   },
   {
     "name": "台积电",
     "nameZh": "台积电",
     "nameEn": "TSMC",
-    "logo": "https://seeklogo.com/images/T/tsmc-logo-0F0F0F0F0F-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/48/TSMC.svg"
   },
   {
     "name": "博通",
     "nameZh": "博通",
     "nameEn": "Broadcom",
-    "logo": "https://seeklogo.com/images/B/broadcom-logo-4E4E4E4E4E-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Broadcom_logo.svg"
   },
   {
     "name": "特斯拉",
     "nameZh": "特斯拉",
     "nameEn": "Tesla",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c2.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg"
   },
   {
     "name": "礼来",
     "nameZh": "礼来",
     "nameEn": "Eli Lilly",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Eli_Lilly_and_Company.svg/512px-Eli_Lilly_and_Company.svg.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Eli_Lilly_and_Company.svg"
   },
   {
     "name": "摩根大通",
     "nameZh": "摩根大通",
     "nameEn": "JPMorgan Chase",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4b9.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8d/JPMorgan_Chase_Logo_2008.svg"
   },
   {
     "name": "沃尔玛",
     "nameZh": "沃尔玛",
     "nameEn": "Walmart",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c1.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg"
   },
   {
     "name": "Visa",
     "nameZh": "Visa",
     "nameEn": "Visa",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c0.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
   },
   {
     "name": "万事达卡",
     "nameZh": "万事达卡",
     "nameEn": "Mastercard",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4ba.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
   },
   {
     "name": "腾讯控股",
     "nameZh": "腾讯控股",
     "nameEn": "Tencent",
-    "logo": "https://www.stickpng.com/assets/images/5e4d5f9c4a3d4c0004b5e4f0.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/22/Tencent_Logo.svg"
   },
   {
     "name": "甲骨文",
     "nameZh": "甲骨文",
     "nameEn": "Oracle",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4bb.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg"
   },
   {
     "name": "网飞",
     "nameZh": "网飞",
     "nameEn": "Netflix",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4bc.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
   },
   {
     "name": "Netflix",
     "nameZh": "网飞",
     "nameEn": "Netflix",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4bc.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
   },
   {
     "name": "强生",
     "nameZh": "强生",
     "nameEn": "Johnson & Johnson",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4bd.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/00/Johnson_and_Johnson_Logo.svg"
   },
   {
     "name": "埃克森美孚",
     "nameZh": "埃克森美孚",
     "nameEn": "ExxonMobil",
-    "logo": "https://brandslogos.com/wp-content/uploads/2019/08/exxon-mobil-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/45/Exxon_Mobil_Logo.svg"
   },
   {
     "name": "阿里巴巴",
     "nameZh": "阿里巴巴",
     "nameEn": "Alibaba",
-    "logo": "https://www.stickpng.com/assets/images/5e4d5f9c4a3d4c0004b5e4f1.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Alibaba.com_logo.svg"
   },
   {
     "name": "雀巢",
     "nameZh": "雀巢",
     "nameEn": "Nestlé",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4be.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/37/Nestl%C3%A9_logo.svg"
   },
   {
     "name": "宝洁",
     "nameZh": "宝洁",
     "nameEn": "Procter & Gamble",
-    "logo": "https://brandslogos.com/wp-content/uploads/2019/09/procter-gamble-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Procter_%26_Gamble_logo.svg"
   },
   {
     "name": "三星电子",
     "nameZh": "三星电子",
     "nameEn": "Samsung",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4bf.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg"
   },
   {
     "name": "联合健康",
     "nameZh": "联合健康",
     "nameEn": "UnitedHealth Group",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/unitedhealth-group-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/10/UnitedHealth_Group_logo.svg"
   },
   {
     "name": "中国工商银行",
     "nameZh": "中国工商银行",
     "nameEn": "ICBC",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/icbc-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/29/ICBC_Logo.svg"
   },
   {
     "name": "中国建设银行",
     "nameZh": "中国建设银行",
     "nameEn": "China Construction Bank",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/china-construction-bank-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5c/China_Construction_Bank_logo.svg"
   },
   {
     "name": "中国农业银行",
     "nameZh": "中国农业银行",
     "nameEn": "Agricultural Bank of China",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/agricultural-bank-of-china-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Agricultural_Bank_of_China_logo.svg"
   },
   {
     "name": "中国银行",
     "nameZh": "中国银行",
     "nameEn": "Bank of China",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/bank-of-china-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/57/Bank_of_China_Logo.svg"
   },
   {
     "name": "中国石油",
     "nameZh": "中国石油",
     "nameEn": "PetroChina",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/petrochina-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f8/PetroChina_Logo.svg"
   },
   {
     "name": "中国移动",
     "nameZh": "中国移动",
     "nameEn": "China Mobile",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/china-mobile-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3e/China_Mobile_logo.svg"
   },
   {
     "name": "富国银行",
     "nameZh": "富国银行",
     "nameEn": "Wells Fargo",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c5.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Wells_Fargo_Bank.svg"
   },
   {
     "name": "通用电气",
     "nameZh": "通用电气",
     "nameEn": "General Electric",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c6.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/ff/General_Electric_logo.svg"
   },
   {
     "name": "诺华",
     "nameZh": "诺华",
     "nameEn": "Novartis",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c7.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/34/Novartis-Logo.svg"
   },
   {
     "name": "通用汽车",
     "nameZh": "通用汽车",
     "nameEn": "General Motors",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c7.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/90/General_Motors_logo.svg"
   },
   {
     "name": "可口可乐",
     "nameZh": "可口可乐",
     "nameEn": "Coca-Cola",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c8.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg"
   },
   {
     "name": "辉瑞",
     "nameZh": "辉瑞",
     "nameEn": "Pfizer",
-    "logo": "https://brandslogos.com/wp-content/uploads/2020/03/pfizer-logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Pfizer_logo.svg"
   },
   {
     "name": "威瑞森",
     "nameZh": "威瑞森",
     "nameEn": "Verizon",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c9.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/04/Verizon_2015_logo_-vector.svg"
   },
   {
     "name": "Verizon",
     "nameZh": "威瑞森",
     "nameEn": "Verizon",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4c9.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/04/Verizon_2015_logo_-vector.svg"
   },
   {
     "name": "AT&T",
     "nameZh": "AT&T",
     "nameEn": "AT&T",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4ca.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/83/AT%26T_logo_2016.svg"
   },
   {
     "name": "英特尔",
     "nameZh": "英特尔",
     "nameEn": "Intel",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4cb.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg"
   },
   {
     "name": "高盛",
     "nameZh": "高盛",
     "nameEn": "Goldman Sachs",
-    "logo": "https://www.stickpng.com/assets/images/580b57fcd9996b5f7d09e4cc.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/46/Goldman_Sachs_Logo.svg"
   }
 ]

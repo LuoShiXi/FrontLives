@@ -1,10 +1,12 @@
 // 备用方案：简单的内存 Mock API（不使用 Service Worker）
+import testData from './data/test.json'
+import usersGetData from './data/users-get.json'
+import usersPostSuccessData from './data/users-post-success.json'
+import usersPostErrorData from './data/users-post-error.json'
+
 class MockAPI {
   constructor() {
-    this.users = [
-      { id: 1, name: '张三', email: 'zhangsan@example.com' },
-      { id: 2, name: '李四', email: 'lisi@example.com' },
-    ]
+    this.users = usersGetData.data
   }
 
   // 拦截 fetch 请求
@@ -33,30 +35,22 @@ class MockAPI {
     const method = options.method || 'GET'
 
     if (url === '/api/test') {
-      return this.createResponse({
-        message: 'Mock API 工作正常!',
-        timestamp: new Date().toISOString(),
-        method: method
-      })
+      const response = { ...testData }
+      response.timestamp = new Date().toISOString()
+      response.method = method
+      return this.createResponse(response)
     }
 
     if (url === '/api/users') {
       if (method === 'GET') {
-        return this.createResponse({
-          success: true,
-          data: this.users,
-          total: this.users.length
-        })
+        return this.createResponse(usersGetData)
       }
 
       if (method === 'POST') {
         try {
           const newUser = JSON.parse(options.body)
           if (!newUser.name || !newUser.email) {
-            return this.createResponse({
-              success: false,
-              message: '姓名和邮箱不能为空'
-            }, 400)
+            return this.createResponse(usersPostErrorData.validationError, 400)
           }
 
           const user = {
@@ -65,15 +59,11 @@ class MockAPI {
           }
           this.users.push(user)
 
-          return this.createResponse({
-            success: true,
-            data: user
-          }, 201)
-        } catch (error) {
-          return this.createResponse({
-            success: false,
-            message: '请求数据格式错误'
-          }, 400)
+          const response = { ...usersPostSuccessData }
+          response.data = user
+          return this.createResponse(response, 201)
+        } catch {
+          return this.createResponse(usersPostErrorData.formatError, 400)
         }
       }
     }

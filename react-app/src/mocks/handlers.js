@@ -1,26 +1,20 @@
 import { http, HttpResponse } from 'msw'
+import testData from './data/test.json'
+import usersGetData from './data/users-get.json'
+import usersPostSuccessData from './data/users-post-success.json'
+import usersPostErrorData from './data/users-post-error.json'
 
 export const handlers = [
   // 简单的测试接口
   http.get('/api/test', () => {
-    return HttpResponse.json({
-      message: 'MSW is working!',
-      timestamp: new Date().toISOString()
-    })
+    const response = { ...testData }
+    response.timestamp = new Date().toISOString()
+    return HttpResponse.json(response)
   }),
 
   // 获取用户列表
   http.get('/api/users', () => {
-    const users = [
-      { id: 1, name: '张三', email: 'zhangsan@example.com' },
-      { id: 2, name: '李四', email: 'lisi@example.com' },
-    ]
-
-    return HttpResponse.json({
-      success: true,
-      data: users,
-      total: users.length
-    })
+    return HttpResponse.json(usersGetData)
   }),
 
   // 创建用户
@@ -29,26 +23,18 @@ export const handlers = [
       const newUser = await request.json()
 
       if (!newUser.name || !newUser.email) {
-        return HttpResponse.json({
-          success: false,
-          message: '姓名和邮箱不能为空'
-        }, { status: 400 })
+        return HttpResponse.json(usersPostErrorData.validationError, { status: 400 })
       }
 
-      const user = {
+      const response = { ...usersPostSuccessData }
+      response.data = {
         id: Date.now(), // 使用时间戳作为ID
         ...newUser
       }
 
-      return HttpResponse.json({
-        success: true,
-        data: user
-      }, { status: 201 })
-    } catch (error) {
-      return HttpResponse.json({
-        success: false,
-        message: '请求数据格式错误'
-      }, { status: 400 })
+      return HttpResponse.json(response, { status: 201 })
+    } catch {
+      return HttpResponse.json(usersPostErrorData.formatError, { status: 400 })
     }
   })
 ]
